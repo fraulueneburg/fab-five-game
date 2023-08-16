@@ -140,7 +140,7 @@ function drawCard() {
 		cards[i].style.animation = ''
 		cards[i].style.animationPlayState = 'running'
 	}
-	setTimeout(() => {
+	const timeOutShuffleAnimation = setTimeout(() => {
 		for (let i = 0; i < cards.length; i++) {
 			cards[i].style.animation = 'none'
 			cards[i].style.animationPlayState = 'paused'
@@ -154,7 +154,8 @@ function drawCard() {
 			}
 		}
 	}, 1000)
-	clearTimeout()
+	timeOutShuffleAnimation()
+	clearTimeout(timeOutShuffleAnimation)
 
 	// if time is up
 	const countBackwardsInterval = setInterval(function () {
