@@ -158,7 +158,7 @@ function drawCard() {
 	clearTimeout(timeOutShuffleAnimation)
 
 	// if time is up
-	const countBackwardsInterval = setInterval(function () {
+	const countBackwardsInterval = setInterval(() => {
 		if (time > 0) {
 			timeWrapper.innerHTML = time
 			time--
@@ -618,7 +618,7 @@ if (prefersDarkScheme.matches) {
 }
 
 // change color mode on button click
-btnColorMode.addEventListener('click', function () {
+btnColorMode.addEventListener('click', () => {
 	if (document.documentElement.classList.contains('dark-theme')) {
 		cardDeck = []
 		createCardDeck(itemsLightArr, colorsLightArr)
