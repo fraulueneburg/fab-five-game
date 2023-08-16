@@ -29,6 +29,10 @@ let modalText = document.querySelector('.modal .text')
 let btnWhat = document.querySelector('.btn-what')
 let btnCloseModal = document.querySelectorAll('.close')
 
+function pickRandomArrItem(arr) {
+	Math.floor(Math.random() * arr.length)
+}
+
 timeWrapper.innerHTML = time
 
 btnExamples.addEventListener = () => {
