@@ -171,7 +171,7 @@ function drawCard() {
 // ----- CHECK SOLUTION -----
 
 function checkSolution(clickedElement) {
-	let clickedAnswer = clickedElement.getAttribute('ffname')
+	let clickedAnswer = clickedElement.getAttribute('data-ffname')
 
 	rounds < roundsMax ? (btnNextRound.innerHTML = 'Next Round') : (btnNextRound.innerHTML = 'See Score')
 
