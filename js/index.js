@@ -80,8 +80,8 @@ function drawCard() {
 
 	// randomize order of the two items
 	let randomOneOrZero = Math.floor(Math.random() * 2)
-	let randomOneOrZero2
-	randomOneOrZero == 0 ? (randomOneOrZero2 = 1) : (randomOneOrZero2 = 0)
+	let randomOneOrZero2 = 1 - randomOneOrZero
+	randomOneOrZero === 0 ? (randomOneOrZero2 = 1) : (randomOneOrZero2 = 0)
 
 	// define two items + solution
 	let obj1 = chosenCard.items[randomOneOrZero]
@@ -103,8 +103,8 @@ function drawCard() {
 		modal.classList.add('modal-what')
 		let explanation
 		if (
-			(rightAnswer.shape == obj1.shape && rightAnswer.color.alias == obj1.color.alias) ||
-			(rightAnswer.shape == obj2.shape && rightAnswer.color.alias == obj2.color.alias)
+			(rightAnswer.shape === obj1.shape && rightAnswer.color.alias === obj1.color.alias) ||
+			(rightAnswer.shape === obj2.shape && rightAnswer.color.alias === obj2.color.alias)
 		) {
 			explanation = `
                     <div class="images">
@@ -149,7 +149,7 @@ function drawCard() {
 	clearTimeout()
 
 	// if time is up
-	const countBackwards = setInterval(function () {
+	const countBackwards = setInterval(() => {
 		if (time > 0) {
 			timeWrapper.innerHTML = time
 			time--
@@ -175,22 +175,22 @@ function checkSolution(clickedElement) {
 
 	rounds < roundsMax ? (btnNextRound.innerHTML = 'Next Round') : (btnNextRound.innerHTML = 'See Score')
 
-	if (clickedAnswer == rightAnswer.name) {
+	if (clickedAnswer === rightAnswer.name) {
 		let response
 		const randomComplimentNum = Math.floor(Math.random() * complimentsArr.length)
 		score++
 		wins++
 		scoreWrapper.innerHTML = `${score}`
 		modal.classList.add('modal-right')
-		if (wins == 3 && rounds != roundsMax) {
+		if (wins === 3 && rounds != roundsMax) {
 			modal.classList.add('modal-levelup')
 			timeMax = timeMax - 2
 			response = `<p>That was the right answer.</p><p>Wow. You’re good at this.<br>Let’s make this a little more challenging and decrease the <strong>time limit to ${timeMax} seconds.</strong></p>`
-		} else if (wins == 8 && rounds != roundsMax) {
+		} else if (wins === 8 && rounds != roundsMax) {
 			modal.classList.add('modal-levelup')
 			timeMax = timeMax - 2
 			response = `<p>That was exactly right.</p><p>You’re a natural.<br>Let’s make this just a little more challenging and decrease the <strong>time limit to ${timeMax} seconds.</strong></p>`
-		} else if (wins == 15 && rounds != roundsMax) {
+		} else if (wins === 15 && rounds != roundsMax) {
 			modal.classList.add('modal-levelup')
 			timeMax = timeMax - 1
 			response = `<p>Really impressive.</p><p>Your brain is unstoppable!<br>To keep things interesting, let’s level up one last time and decrease the <strong>time limit to ${timeMax} seconds.</strong></p>`
@@ -229,7 +229,7 @@ function closeModal() {
 	// if not/if gameover
 	if (!gameover) {
 		body.classList.toggle('round-started')
-		rounds == roundsMax - 1 ? (btnDrawCard.innerHTML = 'Draw final card') : (btnDrawCard.innerHTML = 'Draw new card')
+		rounds === roundsMax - 1 ? (btnDrawCard.innerHTML = 'Draw final card') : (btnDrawCard.innerHTML = 'Draw new card')
 		rounds++
 	} else {
 		// open gameover modal after close
@@ -255,7 +255,7 @@ function closeModal() {
 	timeWrapper.innerHTML = time
 
 	// update rounds
-	if (rounds == roundsMax) {
+	if (rounds === roundsMax) {
 		roundsWrapper.innerHTML = `FINAL ROUND!`
 		gameover = true
 	} else if (rounds >= 10) {
@@ -580,12 +580,12 @@ function createCardDeck(items, colors) {
 			let card2_solution = cardDeck[m].solution[0]
 
 			if (
-				card1_item1.shape == card2_item2.shape &&
-				card1_item1.color.alias == card2_item2.color.alias &&
-				card2_item1.shape == card1_item2.shape &&
-				card2_item1.color.alias == card1_item2.color.alias &&
-				card1_solution.shape == card2_solution.shape &&
-				card1_solution.color.name == card2_solution.color.name
+				card1_item1.shape === card2_item2.shape &&
+				card1_item1.color.alias === card2_item2.color.alias &&
+				card2_item1.shape === card1_item2.shape &&
+				card2_item1.color.alias === card1_item2.color.alias &&
+				card1_solution.shape === card2_solution.shape &&
+				card1_solution.color.name === card2_solution.color.name
 			) {
 				cardDeck.splice(m, 1)
 			}
@@ -609,7 +609,7 @@ if (prefersDarkScheme.matches) {
 }
 
 // change color mode on button click
-btnColorMode.addEventListener('click', function () {
+btnColorMode.addEventListener('click', () => {
 	if (document.documentElement.classList.contains('dark-theme')) {
 		cardDeck = []
 		createCardDeck(itemsLightArr, colorsLightArr)
