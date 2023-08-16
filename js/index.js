@@ -75,7 +75,7 @@ function drawCard() {
 	body.classList.toggle('round-started')
 
 	// draw a random card
-	const randomCardNum = Math.floor(Math.random() * cardDeck.length)
+	const randomCardNum = pickRandomArrItem(cardDeck)
 	const chosenCard = cardDeck[randomCardNum]
 
 	// randomize order of the two items
@@ -163,7 +163,7 @@ function drawCard() {
 			time--
 		} else {
 			rounds < roundsMax ? (btnNextRound.innerHTML = 'Next Round') : (btnNextRound.innerHTML = 'See Score')
-			randomEncouragementNum = Math.floor(Math.random() * encouragementsArr.length)
+			randomEncouragementNum = pickRandomArrItem(encouragementsArr)
 			timeWrapper.innerHTML = time
 			btnWhat.innerHTML = `See answer`
 			modalText.innerHTML = `<h3>Oh no! The time is up!</h3><p>But don’t worry.<br>${encouragementsArr[randomEncouragementNum]}</p>`
@@ -185,7 +185,7 @@ function checkSolution(clickedElement) {
 
 	if (clickedAnswer === rightAnswer.name) {
 		let response
-		const randomComplimentNum = Math.floor(Math.random() * complimentsArr.length)
+		const randomComplimentNum = pickRandomArrItem(complimentsArr)
 		score++
 		wins++
 		scoreWrapper.innerHTML = `${score}`
@@ -209,7 +209,7 @@ function checkSolution(clickedElement) {
 		modalText.innerHTML = `<h3>${complimentsArr[randomComplimentNum]}!</h3>` + response
 	} else {
 		modal.classList.add('modal-wrong')
-		const randomPityNum = Math.floor(Math.random() * pityArr.length)
+		const randomPityNum = pickRandomArrItem(pityArr)
 		modalText.innerHTML = `<h3>${pityArr[randomPityNum]}</h3><p>The right answer is ${rightAnswer.shape}.</p>`
 		btnWhat.innerHTML = `Wait – what?`
 	}
@@ -242,7 +242,7 @@ function closeModal() {
 	} else {
 		// open gameover modal after close
 		modal.className = 'modal modal-gameover'
-		const randomComplimentNum = Math.floor(Math.random() * complimentsArr.length)
+		const randomComplimentNum = pickRandomArrItem(complimentsArr)
 		let textVeryGood = `<h3>${complimentsArr[randomComplimentNum]}!</h3><p>That was one of a kind!<br>You won <span class="highlighted">${wins} out of ${rounds} rounds.</strong></p><small>Give yourself a pat on the back. You may also want to take a screenshot of this so you can brag about it at your highschool reunion. (Take that, fifth grade math teacher!)</<small>`
 		let textGood = `<h3>Congratulations!</h3><p>You won <span class="highlighted">${wins} out of ${rounds} rounds.</span><br>Want to play again and try to top this score?</p>`
 		wins >= roundsMax * 0.72 ? (modalText.innerHTML = textVeryGood) : (modalText.innerHTML = textGood)
@@ -487,6 +487,10 @@ const encouragementsArr = [
 	'The best view comes after the hardest climb.',
 	'It doesn’t matter how far down you fall as long as you can still look up and see the stars.',
 ]
+
+function pickRandomArrItem(arr) {
+	Math.floor(Math.random() * arr.length)
+}
 
 // ----- CREATE CARD DECK -----
 
