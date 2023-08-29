@@ -2,7 +2,7 @@
 
 # The Fab Five Game
 
-### 👉&nbsp;&nbsp;Play it at&nbsp;&nbsp;[fraulueneburg-ironhack.github.io/fab-five-game/](https://fraulueneburg-ironhack.github.io/fab-five-game/)
+### 👉&nbsp;&nbsp;Play it at&nbsp;&nbsp;[fraulueneburg.github.io/fab-five-game/](https://fraulueneburg.github.io/fab-five-game/)
 
 <br />
 
@@ -22,16 +22,16 @@ I used svgs and embedded them inline via the `<use>` element. The colours are dy
 
 ## Demo
 
-👉&nbsp;&nbsp;Play it at&nbsp;&nbsp;[fraulueneburg-ironhack.github.io/fab-five-game/](https://fraulueneburg-ironhack.github.io/fab-five-game/)
+👉&nbsp;&nbsp;Play it at&nbsp;&nbsp;[fraulueneburg.github.io/fab-five-game/](https://fraulueneburg.github.io/fab-five-game/)
 
 ## Setup
 
 If you’d like to view my game in your browser:
 
-- `git clone https://github.com/fraulueneburg-ironhack/fab-five-game.git` in your terminal
+- `git clone https://github.com/fraulueneburg/fab-five-game.git` in your terminal
 - `cd fab-five-game`
 - open `index.html`
-- or, you know, just visit [the game demo](https://fraulueneburg-ironhack.github.io/fab-five-game/) and start the gaming fun right away 🚀
+- or, you know, just visit [the game demo](https://fraulueneburg.github.io/fab-five-game/) and start the gaming fun right away 🚀
 
 ## Rules
 
