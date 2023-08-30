@@ -1,268 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="robots" content="noindex,nofollow" />
-		<title>The Fab Five Game!</title>
-		<link rel="stylesheet" href="css/fonts.css" />
-		<link rel="stylesheet" href="css/style.css" />
-		<link rel="icon" href="img/favicon.svg" />
-	</head>
-	<body>
-		<svg display="none" width="0" height="0" version="1.1" role="none" xmlns="http://www.w3.org/2000/svg">
-			<defs>
-				<symbol id="item01" focusable="false" role="none" viewBox="0 0 160 160">
-					<defs>
-						<style>
-							.cls-11 {
-								fill: currentColor;
-							}
-							.cls-12 {
-								isolation: isolate;
-								opacity: 0.17;
-							}
-						</style>
-					</defs>
-					<path
-						id="c11"
-						class="cls-11"
-						d="m156,102.6l-.1-35.6c0-8.2-6.7-14.8-14.9-14.8h-1.3c-1.7,0-3.3.3-4.8.8v-28.9c0-8.2-6.6-14.8-14.9-14.8H39.7c-8.2-.1-14.8,6.6-14.8,14.8l-.1,28.9c-1.5-.5-3.1-.8-4.7-.8h-1.3c-8.2,0-14.9,6.6-14.9,14.8v47.9c0,8.2,6.7,14.9,14.9,14.9h5.8v6c0,8.2,6.6,14.9,14.9,14.9h1.3c8.2,0,14.9-6.6,14.9-14.9v-6h48v6c0,8.2,6.6,14.9,14.9,14.9h1.3c8.2,0,14.9-6.6,14.9-14.9v-6h6.4c8.2,0,14.9-6.7,14.9-14.8,0,0-.1-10.8-.1-12.4h0Z" />
-					<path
-						id="b11"
-						class="cls-12"
-						d="m155.9,67c0-8.2-6.7-14.8-14.9-14.8h-1.3c-8.2,0-14.8,6.7-14.8,14.8l-.2,30.6H35v-30.6c0-8.2-6.7-14.8-14.9-14.8h-1.3c-8.2,0-14.9,6.6-14.9,14.8v47.9c0,8.2,6.7,14.9,14.9,14.9h122.4c8.2,0,14.9-6.7,14.9-14.8,0,0-.1-10.8-.1-12.4l-.1-35.6h0Z" />
-				</symbol>
-				<symbol id="item02" focusable="false" role="none" viewBox="0 0 160 160">
-					<defs>
-						<style>
-							.cls-22 {
-								fill: #af7045;
-							}
-							.cls-23 {
-								fill: currentColor;
-							}
-						</style>
-					</defs>
-					<path
-						id="c22"
-						class="cls-23"
-						d="m111.65,70.2c-1.1-8.3-6.7-14.1-13.8-15.5V19.6c0-8.7-7.1-4.7-15.8-4.7h-3.9c-8.7,0-15.8-4-15.8,4.7v35c-7.7,1-13.8,7.4-14.9,15.6l-7.5,69.4c0,8.7,7.1,15.7,15.7,15.7h48.7c8.7,0,15.7-7.1,15.7-15.7,0,0-8.4-69.4-8.4-69.4Z" />
-					<path
-						id="b22"
-						class="cls-22"
-						d="m66.8,4.7h26.4c3.9,0,7.1,3.2,7.1,7h0c0,3.9-3.2,7-7.1,7h-26.4c-3.9,0-7.1-3.2-7.1-7h0c.1-3.9,3.2-7,7.1-7Z" />
-				</symbol>
-				<symbol id="item03" focusable="false" role="none" viewBox="0 0 160 160">
-					<defs>
-						<style>
-							.cls-31 {
-								fill: var(--item-fill-color);
-							}
-							.cls-32 {
-								fill: currentColor;
-							}
-						</style>
-					</defs>
-					<path
-						id="d33"
-						class="cls-32"
-						d="m39.9,11.05h80.3c8.2,0,14.8,6.6,14.8,14.8v108.2c0,8.2-6.6,14.9-14.8,14.9H39.9c-8.2,0-14.9-6.6-14.9-14.9V25.85c.1-8.2,6.7-14.8,14.9-14.8Z" />
-					<path
-						id="c33"
-						class="cls-31"
-						d="m49.1,37.85h53.2c3.3,0,6,2.7,6,6h0c0,3.3-2.7,6-6,6h-53.2c-3.3,0-6-2.7-6-6h0c0-3.3,2.7-6,6-6Z" />
-					<path
-						id="b33"
-						class="cls-31"
-						d="m49.1,61.95h38.1c3.3,0,6,2.7,6,6h0c0,3.3-2.7,6-6,6h-38.1c-3.3,0-6-2.7-6-6h0c0-3.3,2.7-6,6-6Z" />
-				</symbol>
-				<symbol id="item04" focusable="false" role="none" viewBox="0 0 160 160">
-					<defs>
-						<style>
-							.cls-41 {
-								fill: currentColor;
-							}
-							.cls-42 {
-								fill: var(--item-fill-color);
-							}
-						</style>
-					</defs>
-					<path
-						id="d44"
-						class="cls-41"
-						d="m134.95,65.25c0-30.4-24.7-55-55-55s-55,24.7-55,55l-.2,70.7c0,7.6,6.2,13.8,13.8,13.8s13.2-5.7,13.8-12.8c.5,7.2,6.5,12.8,13.8,12.8s13.2-5.7,13.8-12.8c.5,7.2,6.5,12.8,13.8,12.8s13.2-5.7,13.8-12.8c.5,7.2,6.5,12.8,13.8,12.8s13.8-6.2,13.8-13.8l.1-70.7h-.3Z" />
-					<circle id="c44" class="cls-42" cx="62.25" cy="59.25" r="8.3" />
-					<circle id="b44" class="cls-42" cx="97.85" cy="59.25" r="8.3" />
-				</symbol>
-				<symbol id="item05" focusable="false" role="none" viewBox="0 0 160 160">
-					<defs>
-						<style>
-							.cls-51 {
-								fill: var(--item-fill-color);
-							}
-							.cls-52 {
-								fill: currentColor;
-							}
-						</style>
-					</defs>
-					<path
-						id="d55"
-						class="cls-52"
-						d="m155.9,50.2c0-17.1-13.9-31-31-31-15.9,0-29,12-30.8,27.4-4.5-1.4-9.2-2.1-14.1-2.1s-9.6.7-14.1,2.1c-1.8-15.4-14.9-27.4-30.8-27.4-17.1,0-31,13.9-31,31s12.9,30,29.2,31c-.9,3.7-1.4,7.5-1.4,11.4,0,26.6,21.6,48.2,48.2,48.2s48.2-21.6,48.2-48.2c0-3.9-.5-7.8-1.4-11.4,16.1-1,29-14.5,29-31h0Z" />
-					<circle id="c55" class="cls-51" cx="62.2" cy="85.2" r="8.3" />
-					<circle id="b55" class="cls-51" cx="97.8" cy="85.2" r="8.3" />
-				</symbol>
-			</defs>
-		</svg>
-		<header>
-			<div class="container">
-				<h1 class="logo">THE FAB FIVE GAME!</h1>
-				<nav>
-					<ul>
-						<li class="color-mode"><a href="#" class="btn-color-mode">☽</a></li>
-						<li class="question"><a href="#" class="btn-question hidden">?</a></li>
-					</ul>
-				</nav>
-			</div>
-		</header>
-		<main>
-			<section class="container">
-				<!-- <h2>Choose your fab five:</h2> -->
-				<div class="play-head">
-					<div class="rounds"><h2>Round 01</h2></div>
-					<div class="wins"><strong>Wins</strong> <span class="num">0</span></div>
-					<div class="time"><strong>Time</strong> <span class="num">5</span></div>
-				</div>
-				<ul class="fab-five-items unstyled">
-					<li>
-						<a href="#" data-ffname="item01">
-							<svg height="90" width="90" style="color: var(--item01-color)">
-								<use href="#item01" />
-							</svg>
-						</a>
-					</li>
-					<li>
-						<a href="#" data-ffname="item02">
-							<svg height="90" width="90" style="color: var(--item02-color)">
-								<use href="#item02" />
-							</svg>
-						</a>
-					</li>
-					<li>
-						<a href="#" data-ffname="item03">
-							<svg height="90" width="90" style="color: var(--item03-color)">
-								<use href="#item03" />
-							</svg>
-						</a>
-					</li>
-					<li>
-						<a href="#" data-ffname="item04">
-							<svg height="90" width="90" style="color: var(--item04-color)">
-								<use href="#item04" />
-							</svg>
-						</a>
-					</li>
-					<li>
-						<a href="#" data-ffname="item05">
-							<svg height="90" width="90" style="color: var(--item05-color)">
-								<use href="#item05" />
-							</svg>
-						</a>
-					</li>
-				</ul>
-				<div class="modal hidden">
-					<div class="content">
-						<div class="images"></div>
-						<div class="text"></div>
-						<div class="btn-group">
-							<button class="btn-what">Wait – what?</button>
-							<button class="btn-ok btn-next-round close">Next Round</button>
-							<button class="btn-ok btn-restart close">New Game</button>
-						</div>
-						<a href="#" class="close link-close"></a>
-					</div>
-				</div>
-				<div class="play-footer">
-					<button class="btn-draw-card btn-ok">Draw Card</button>
-					<div class="cards">
-						<div class="card"></div>
-						<div class="card"></div>
-						<div class="card current">
-							<div class="front"></div>
-							<div class="back">
-								<div class="content"></div>
-							</div>
-						</div>
-						<div class="card"></div>
-						<div class="card"></div>
-					</div>
-				</div>
-				<div class="intro">
-					<div class="intro-text">
-						<h2>How it works:</h2>
-						<p>
-							There are five objects in different colors.<br />
-							Start a round by drawing a card. The card will show two objects in two colors.<br />
-							Now, be quick and <span class="highlighted">click the object that is shown in its original color.</span><br />
-							<span class="highlighted">If none of the objects</span> are shown in their original color,<br />
-							click the object whose shape <em>and</em> color <span class="highlighted">cannot</span> be found on the card.
-						</p>
-					</div>
-					<div class="example-text hidden">
-						<div class="col">
-							<div class="card flipped">
-								<div class="back">
-									<div class="content">
-										<svg height="70" width="90" style="color: var(--item01-color)"><use href="#item01" /></svg>
-										<svg height="70" width="90" style="color: var(--item04-color)"><use href="#item03" /></svg>
-									</div>
-								</div>
-							</div>
-							<div class="text">
-								<h2>Example 1</h2>
-								<p>The <span class="highlighted">chair is shown in its original color</span> while the book is not.</p>
-								<p>The right answer is chair.</p>
-							</div>
-						</div>
-						<div class="col">
-							<div class="card flipped">
-								<div class="back">
-									<div class="content">
-										<svg height="70" width="90" style="color: var(--item04-color)"><use href="#item03" /></svg>
-										<svg height="70" width="90" style="color: var(--item02-color)"><use href="#item01" /></svg>
-									</div>
-								</div>
-							</div>
-							<div class="text">
-								<h2>Example 2</h2>
-								<p>
-									<span class="highlighted">No item is shown in its original color.</span><br />The chair has the color of
-									the bottle while the book has the color of the ghost.
-								</p>
-								<p>
-									The only item <span class="highlighted">whose shape <em>and</em> color is not on this card</span> is the
-									mouse. <br />Mouse is the right answer.
-								</p>
-							</div>
-						</div>
-					</div>
-					<div class="btn-group">
-						<button class="btn-example">See Examples</button>
-						<button class="btn-start btn-ok">Start Game</button>
-					</div>
-				</div>
-			</section>
-		</main>
-		<footer>
-			<div class="container">
-				<small
-					>built by <a href="https://github.com/fraulueneburg" target="_blank">Wiebke</a> at
-					<a href="https://www.ironhack.com" target="_blank">Ironhack</a> ✨</small
-				>
-			</div>
-		</footer>
-		<script type="text/javascript" src="js/index.js"></script>
-	</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="robots" content="noindex,nofollow">
+        <title>The Fab Five Game!</title>
+        <link rel="stylesheet" href="css/fonts.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="icon" href="img/favicon.svg">
+    </head>
+    <body>
+        <svg display="none" width="0" height="0" version="1.1" role="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <symbol id="item01" focusable="false" role="none" viewBox="0 0 160 160"><defs><style>.cls-11{fill:currentColor;}.cls-12{isolation:isolate;opacity:.17;}</style></defs><path id="c11" class="cls-11" d="m156,102.6l-.1-35.6c0-8.2-6.7-14.8-14.9-14.8h-1.3c-1.7,0-3.3.3-4.8.8v-28.9c0-8.2-6.6-14.8-14.9-14.8H39.7c-8.2-.1-14.8,6.6-14.8,14.8l-.1,28.9c-1.5-.5-3.1-.8-4.7-.8h-1.3c-8.2,0-14.9,6.6-14.9,14.8v47.9c0,8.2,6.7,14.9,14.9,14.9h5.8v6c0,8.2,6.6,14.9,14.9,14.9h1.3c8.2,0,14.9-6.6,14.9-14.9v-6h48v6c0,8.2,6.6,14.9,14.9,14.9h1.3c8.2,0,14.9-6.6,14.9-14.9v-6h6.4c8.2,0,14.9-6.7,14.9-14.8,0,0-.1-10.8-.1-12.4h0Z"/><path id="b11" class="cls-12" d="m155.9,67c0-8.2-6.7-14.8-14.9-14.8h-1.3c-8.2,0-14.8,6.7-14.8,14.8l-.2,30.6H35v-30.6c0-8.2-6.7-14.8-14.9-14.8h-1.3c-8.2,0-14.9,6.6-14.9,14.8v47.9c0,8.2,6.7,14.9,14.9,14.9h122.4c8.2,0,14.9-6.7,14.9-14.8,0,0-.1-10.8-.1-12.4l-.1-35.6h0Z"/></symbol>
+                <symbol id="item02" focusable="false" role="none" viewBox="0 0 160 160"><defs><style>.cls-22{fill:#af7045;}.cls-23{fill:currentColor;}</style></defs><path id="c22" class="cls-23" d="m111.65,70.2c-1.1-8.3-6.7-14.1-13.8-15.5V19.6c0-8.7-7.1-4.7-15.8-4.7h-3.9c-8.7,0-15.8-4-15.8,4.7v35c-7.7,1-13.8,7.4-14.9,15.6l-7.5,69.4c0,8.7,7.1,15.7,15.7,15.7h48.7c8.7,0,15.7-7.1,15.7-15.7,0,0-8.4-69.4-8.4-69.4Z"/><path id="b22" class="cls-22" d="m66.8,4.7h26.4c3.9,0,7.1,3.2,7.1,7h0c0,3.9-3.2,7-7.1,7h-26.4c-3.9,0-7.1-3.2-7.1-7h0c.1-3.9,3.2-7,7.1-7Z"/></symbol>
+                <symbol id="item03" focusable="false" role="none" viewBox="0 0 160 160"><defs><style>.cls-31{fill:var(--item-fill-color);}.cls-32{fill:currentColor;}</style></defs><path id="d33" class="cls-32" d="m39.9,11.05h80.3c8.2,0,14.8,6.6,14.8,14.8v108.2c0,8.2-6.6,14.9-14.8,14.9H39.9c-8.2,0-14.9-6.6-14.9-14.9V25.85c.1-8.2,6.7-14.8,14.9-14.8Z"/><path id="c33" class="cls-31" d="m49.1,37.85h53.2c3.3,0,6,2.7,6,6h0c0,3.3-2.7,6-6,6h-53.2c-3.3,0-6-2.7-6-6h0c0-3.3,2.7-6,6-6Z"/><path id="b33" class="cls-31" d="m49.1,61.95h38.1c3.3,0,6,2.7,6,6h0c0,3.3-2.7,6-6,6h-38.1c-3.3,0-6-2.7-6-6h0c0-3.3,2.7-6,6-6Z"/></symbol>
+                <symbol id="item04" focusable="false" role="none" viewBox="0 0 160 160"><defs><style>.cls-41{fill:currentColor;}.cls-42{fill:var(--item-fill-color);}</style></defs><path id="d44" class="cls-41" d="m134.95,65.25c0-30.4-24.7-55-55-55s-55,24.7-55,55l-.2,70.7c0,7.6,6.2,13.8,13.8,13.8s13.2-5.7,13.8-12.8c.5,7.2,6.5,12.8,13.8,12.8s13.2-5.7,13.8-12.8c.5,7.2,6.5,12.8,13.8,12.8s13.2-5.7,13.8-12.8c.5,7.2,6.5,12.8,13.8,12.8s13.8-6.2,13.8-13.8l.1-70.7h-.3Z"/><circle id="c44" class="cls-42" cx="62.25" cy="59.25" r="8.3"/><circle id="b44" class="cls-42" cx="97.85" cy="59.25" r="8.3"/></symbol>
+                <symbol id="item05" focusable="false" role="none" viewBox="0 0 160 160"><defs><style>.cls-51{fill:var(--item-fill-color);}.cls-52{fill:currentColor;}</style></defs><path id="d55" class="cls-52" d="m155.9,50.2c0-17.1-13.9-31-31-31-15.9,0-29,12-30.8,27.4-4.5-1.4-9.2-2.1-14.1-2.1s-9.6.7-14.1,2.1c-1.8-15.4-14.9-27.4-30.8-27.4-17.1,0-31,13.9-31,31s12.9,30,29.2,31c-.9,3.7-1.4,7.5-1.4,11.4,0,26.6,21.6,48.2,48.2,48.2s48.2-21.6,48.2-48.2c0-3.9-.5-7.8-1.4-11.4,16.1-1,29-14.5,29-31h0Z"/><circle id="c55" class="cls-51" cx="62.2" cy="85.2" r="8.3"/><circle id="b55" class="cls-51" cx="97.8" cy="85.2" r="8.3"/></symbol>
+            </defs>
+        </svg>
+        <header>
+            <div class="container">
+                <h1 class="logo">THE FAB FIVE GAME!</h1>
+                <nav>
+                    <ul>
+                        <li class="color-mode"><a href="#" class="btn-color-mode">☽</a></li>
+                        <li class="question"><a href="#" class="btn-question hidden">?</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main>
+            <section class="container">
+                <!-- <h2>Choose your fab five:</h2> -->
+                <div class="play-head">
+                    <div class="rounds"><h2>Round 01</h2></div>
+                    <div class="wins"><strong>Wins</strong> <span class="num">0</span></div>
+                    <div class="time"><strong>Time</strong> <span class="num">5</span></div>
+                </div>
+                <ul class="fab-five-items unstyled">
+                    <li><a href="#" data-ffname="item01"><svg height="90" width="90" style="color: var(--item01-color);"><use href="#item01"></svg></a></li>
+                    <li><a href="#" data-ffname="item02"><svg height="90" width="90" style="color: var(--item02-color);"><use href="#item02"></svg></a></li>
+                    <li><a href="#" data-ffname="item03"><svg height="90" width="90" style="color: var(--item03-color);"><use href="#item03"></svg></a></li>
+                    <li><a href="#" data-ffname="item04"><svg height="90" width="90" style="color: var(--item04-color);"><use href="#item04"></svg></a></li>
+                    <li><a href="#" data-ffname="item05"><svg height="90" width="90" style="color: var(--item05-color);"><use href="#item05"></svg></a></li>
+                </ul>
+                <div class="modal hidden">
+                    <div class="content">
+                        <div class="images"></div>
+                        <div class="text"></div>
+                        <div class="btn-group">
+                            <button class="btn-what">Wait – what?</button>
+                            <button class="btn-ok btn-next-round close">Next Round</button>
+                            <button class="btn-ok btn-restart close">New Game</button>
+                        </div>
+                        <a href="#" class="close link-close"></a>
+                    </div>
+                </div>
+                <div class="play-footer">
+                    <button class="btn-draw-card btn-ok">Draw Card</button>
+                    <div class="cards">
+                        <div class="card"></div>
+                        <div class="card"></div>
+                        <div class="card current">
+                            <div class="front">
+                            </div>
+                            <div class="back">
+                                <div class="content">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card"></div>
+                        <div class="card"></div>
+                    </div>
+                </div>
+                <div class="intro">
+                    <div class="intro-text">
+                        <h2>How it works:</h2>
+                        <p>
+                            There are five objects in different colors.<br>
+                            Start a round by drawing a card. The card will show two objects in two colors.<br> 
+                            Now, be quick and <span class="highlighted">click the object that is shown in its original color.</span><br>
+                            <span class="highlighted">If none of the objects</span> are shown in their original color,<br>
+                            click the object whose shape <em>and</em> color <span class="highlighted">cannot</span> be found on the card.
+                        </p>
+                    </div>
+                    <div class="example-text hidden">
+                        <div class="col">
+                            <div class="card flipped">
+                                <div class="back">
+                                    <div class="content">
+                                        <svg height="70" width="90" style="color: var(--item01-color);"><use href="#item01"></use></svg>
+                                        <svg height="70" width="90" style="color: var(--item04-color);"><use href="#item03"></use></svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text">
+                                <h2>Example 1</h2>
+                                <p>The <span class="highlighted">chair is shown in its original color</span> while the book is not.</p><p>The right answer is chair.</p>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card flipped">
+                                <div class="back">
+                                    <div class="content">
+                                        <svg height="70" width="90" style="color: var(--item04-color);"><use href="#item03"></use></svg>
+                                        <svg height="70" width="90" style="color: var(--item02-color);"><use href="#item01"></use></svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text">
+                                <h2>Example 2</h2>
+                                <p><span class="highlighted">No item is shown in its original color.</span><br>The chair has the color of the bottle while the book has the color of the ghost.</p><p>The only item <span class="highlighted">whose shape <em>and</em> color is not on this card</span> is the mouse. <br>Mouse is the right answer.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn-group">
+                        <button class="btn-example">See Examples</button>
+                        <button class="btn-start btn-ok">Start Game</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <div class="container">
+                <small>built by <a href="https://github.com/fraulueneburg-ironhack" target="_blank">Wiebke</a> at <a href="https://www.ironhack.com" target="_blank">Ironhack Bootcamp</a> ✨</small>
+            </div>
+        </footer>
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>
 </html>
