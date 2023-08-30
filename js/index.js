@@ -29,13 +29,9 @@ let modalText = document.querySelector('.modal .text')
 let btnWhat = document.querySelector('.btn-what')
 let btnCloseModal = document.querySelectorAll('.close')
 
-function pickRandomArrItem(arr) {
-	Math.floor(Math.random() * arr.length)
-}
-
 timeWrapper.innerHTML = time
 
-btnExamples.addEventListener = () => {
+btnExamples.onclick = () => {
 	showExamples()
 }
 btnStart.onclick = () => {
@@ -79,13 +75,13 @@ function drawCard() {
 	body.classList.toggle('round-started')
 
 	// draw a random card
-	const randomCardNum = pickRandomArrItem(cardDeck)
+	const randomCardNum = Math.floor(Math.random() * cardDeck.length)
 	const chosenCard = cardDeck[randomCardNum]
 
 	// randomize order of the two items
 	let randomOneOrZero = Math.floor(Math.random() * 2)
-	let randomOneOrZero2 = 1 - randomOneOrZero
-	randomOneOrZero === 0 ? (randomOneOrZero2 = 1) : (randomOneOrZero2 = 0)
+	let randomOneOrZero2
+	randomOneOrZero == 0 ? (randomOneOrZero2 = 1) : (randomOneOrZero2 = 0)
 
 	// define two items + solution
 	let obj1 = chosenCard.items[randomOneOrZero]
@@ -107,29 +103,21 @@ function drawCard() {
 		modal.classList.add('modal-what')
 		let explanation
 		if (
-			(rightAnswer.shape === obj1.shape && rightAnswer.color.alias === obj1.color.alias) ||
-			(rightAnswer.shape === obj2.shape && rightAnswer.color.alias === obj2.color.alias)
+			(rightAnswer.shape == obj1.shape && rightAnswer.color.alias == obj1.color.alias) ||
+			(rightAnswer.shape == obj2.shape && rightAnswer.color.alias == obj2.color.alias)
 		) {
 			explanation = `
                     <div class="images">
-                        <svg height="100" width="100" aria-hidden="true" style="color: ${rightAnswer.color.cssColor};">
-                          <use href="#${rightAnswer.name}">
-                        </svg>
+                        <svg height="100" width="100" aria-hidden="true" style="color: ${rightAnswer.color.cssColor};"><use href="#${rightAnswer.name}"></svg>
                     </div>
                     <p>The ${rightAnswer.shape} is the right answer because it is <strong>shown in its original color</strong> on the card.<p>
                 `
 		} else {
 			explanation = `
                     <div class="images">
-                        <svg height="100" width="100" aria-hidden="true" style="color: ${obj1.color.cssColor};">
-                          <use href="#${obj1.name}">
-                        </svg>
-                        <svg height="100" width="100" aria-hidden="true" style="color: ${obj2.color.cssColor};">
-                          <use href="#${obj2.name}">
-                        </svg>→
-                        <svg height="100" width="100" aria-hidden="true" style="color: ${rightAnswer.color.cssColor};">
-                          <use href="#${rightAnswer.name}">
-                        </svg>
+                        <svg height="100" width="100" aria-hidden="true" style="color: ${obj1.color.cssColor};"><use href="#${obj1.name}"></svg>
+                        <svg height="100" width="100" aria-hidden="true" style="color: ${obj2.color.cssColor};"><use href="#${obj2.name}"></svg>→
+                        <svg height="100" width="100" aria-hidden="true" style="color: ${rightAnswer.color.cssColor};"><use href="#${rightAnswer.name}"></svg>
                     </div>
                     <p><strong>None of the objects</strong> on the card are shown in their <strong>original color</strong>.</p><p>Hence, ${rightAnswer.shape} is the right answer because it is the only item whose <strong>shape <em>and</em> color cannot</strong> be found on the card.<p>
                 `
@@ -144,7 +132,7 @@ function drawCard() {
 		cards[i].style.animation = ''
 		cards[i].style.animationPlayState = 'running'
 	}
-	const timeOutShuffleAnimation = setTimeout(() => {
+	setTimeout(() => {
 		for (let i = 0; i < cards.length; i++) {
 			cards[i].style.animation = 'none'
 			cards[i].style.animationPlayState = 'paused'
@@ -153,29 +141,28 @@ function drawCard() {
 		for (let i = 0; i < fabFiveItems.length; i++) {
 			fabFiveItems[i].onclick = () => {
 				checkSolution(fabFiveItems[i])
-				clearInterval(countBackwardsInterval)
+				clearInterval(countBackwards)
 				time = timeMax
 			}
 		}
 	}, 1000)
-	timeOutShuffleAnimation()
-	clearTimeout(timeOutShuffleAnimation)
+	clearTimeout()
 
 	// if time is up
-	const countBackwardsInterval = setInterval(() => {
+	const countBackwards = setInterval(function () {
 		if (time > 0) {
 			timeWrapper.innerHTML = time
 			time--
 		} else {
 			rounds < roundsMax ? (btnNextRound.innerHTML = 'Next Round') : (btnNextRound.innerHTML = 'See Score')
-			randomEncouragementNum = pickRandomArrItem(encouragementsArr)
+			randomEncouragementNum = Math.floor(Math.random() * encouragementsArr.length)
 			timeWrapper.innerHTML = time
 			btnWhat.innerHTML = `See answer`
 			modalText.innerHTML = `<h3>Oh no! The time is up!</h3><p>But don’t worry.<br>${encouragementsArr[randomEncouragementNum]}</p>`
 			modal.classList.add('modal-timeup')
 			modal.classList.remove('hidden')
 			body.style.overflowY = 'hidden'
-			clearInterval(countBackwardsInterval)
+			clearInterval(countBackwards)
 			time = timeMax
 		}
 	}, 1000)
@@ -188,22 +175,22 @@ function checkSolution(clickedElement) {
 
 	rounds < roundsMax ? (btnNextRound.innerHTML = 'Next Round') : (btnNextRound.innerHTML = 'See Score')
 
-	if (clickedAnswer === rightAnswer.name) {
+	if (clickedAnswer == rightAnswer.name) {
 		let response
-		const randomComplimentNum = pickRandomArrItem(complimentsArr)
+		const randomComplimentNum = Math.floor(Math.random() * complimentsArr.length)
 		score++
 		wins++
 		scoreWrapper.innerHTML = `${score}`
 		modal.classList.add('modal-right')
-		if (wins === 3 && rounds !== roundsMax) {
+		if (wins == 3 && rounds != roundsMax) {
 			modal.classList.add('modal-levelup')
 			timeMax = timeMax - 2
 			response = `<p>That was the right answer.</p><p>Wow. You’re good at this.<br>Let’s make this a little more challenging and decrease the <strong>time limit to ${timeMax} seconds.</strong></p>`
-		} else if (wins === 8 && rounds !== roundsMax) {
+		} else if (wins == 8 && rounds != roundsMax) {
 			modal.classList.add('modal-levelup')
 			timeMax = timeMax - 2
 			response = `<p>That was exactly right.</p><p>You’re a natural.<br>Let’s make this just a little more challenging and decrease the <strong>time limit to ${timeMax} seconds.</strong></p>`
-		} else if (wins === 15 && rounds !== roundsMax) {
+		} else if (wins == 15 && rounds != roundsMax) {
 			modal.classList.add('modal-levelup')
 			timeMax = timeMax - 1
 			response = `<p>Really impressive.</p><p>Your brain is unstoppable!<br>To keep things interesting, let’s level up one last time and decrease the <strong>time limit to ${timeMax} seconds.</strong></p>`
@@ -214,7 +201,7 @@ function checkSolution(clickedElement) {
 		modalText.innerHTML = `<h3>${complimentsArr[randomComplimentNum]}!</h3>` + response
 	} else {
 		modal.classList.add('modal-wrong')
-		const randomPityNum = pickRandomArrItem(pityArr)
+		const randomPityNum = Math.floor(Math.random() * pityArr.length)
 		modalText.innerHTML = `<h3>${pityArr[randomPityNum]}</h3><p>The right answer is ${rightAnswer.shape}.</p>`
 		btnWhat.innerHTML = `Wait – what?`
 	}
@@ -242,12 +229,12 @@ function closeModal() {
 	// if not/if gameover
 	if (!gameover) {
 		body.classList.toggle('round-started')
-		rounds === roundsMax - 1 ? (btnDrawCard.innerHTML = 'Draw final card') : (btnDrawCard.innerHTML = 'Draw new card')
+		rounds == roundsMax - 1 ? (btnDrawCard.innerHTML = 'Draw final card') : (btnDrawCard.innerHTML = 'Draw new card')
 		rounds++
 	} else {
 		// open gameover modal after close
 		modal.className = 'modal modal-gameover'
-		const randomComplimentNum = pickRandomArrItem(complimentsArr)
+		const randomComplimentNum = Math.floor(Math.random() * complimentsArr.length)
 		let textVeryGood = `<h3>${complimentsArr[randomComplimentNum]}!</h3><p>That was one of a kind!<br>You won <span class="highlighted">${wins} out of ${rounds} rounds.</strong></p><small>Give yourself a pat on the back. You may also want to take a screenshot of this so you can brag about it at your highschool reunion. (Take that, fifth grade math teacher!)</<small>`
 		let textGood = `<h3>Congratulations!</h3><p>You won <span class="highlighted">${wins} out of ${rounds} rounds.</span><br>Want to play again and try to top this score?</p>`
 		wins >= roundsMax * 0.72 ? (modalText.innerHTML = textVeryGood) : (modalText.innerHTML = textGood)
@@ -268,7 +255,7 @@ function closeModal() {
 	timeWrapper.innerHTML = time
 
 	// update rounds
-	if (rounds === roundsMax) {
+	if (rounds == roundsMax) {
 		roundsWrapper.innerHTML = `FINAL ROUND!`
 		gameover = true
 	} else if (rounds >= 10) {
@@ -493,10 +480,6 @@ const encouragementsArr = [
 	'It doesn’t matter how far down you fall as long as you can still look up and see the stars.',
 ]
 
-function pickRandomArrItem(arr) {
-	Math.floor(Math.random() * arr.length)
-}
-
 // ----- CREATE CARD DECK -----
 
 let cardDeck = []
@@ -597,17 +580,21 @@ function createCardDeck(items, colors) {
 			let card2_solution = cardDeck[m].solution[0]
 
 			if (
-				card1_item1.shape === card2_item2.shape &&
-				card1_item1.color.alias === card2_item2.color.alias &&
-				card2_item1.shape === card1_item2.shape &&
-				card2_item1.color.alias === card1_item2.color.alias &&
-				card1_solution.shape === card2_solution.shape &&
-				card1_solution.color.name === card2_solution.color.name
+				card1_item1.shape == card2_item2.shape &&
+				card1_item1.color.alias == card2_item2.color.alias &&
+				card2_item1.shape == card1_item2.shape &&
+				card2_item1.color.alias == card1_item2.color.alias &&
+				card1_solution.shape == card2_solution.shape &&
+				card1_solution.color.name == card2_solution.color.name
 			) {
 				cardDeck.splice(m, 1)
 			}
 		}
 	}
+	// console.log(`TRUE ITEMS:`);
+	// console.log(items);
+	// console.log(`FALSE ITEMS:`);
+	// console.log(falseItems);
 }
 
 // create card deck depending on color mode
@@ -622,7 +609,7 @@ if (prefersDarkScheme.matches) {
 }
 
 // change color mode on button click
-btnColorMode.addEventListener('click', () => {
+btnColorMode.addEventListener('click', function () {
 	if (document.documentElement.classList.contains('dark-theme')) {
 		cardDeck = []
 		createCardDeck(itemsLightArr, colorsLightArr)
@@ -653,4 +640,15 @@ function shuffleCards(cardsArr) {
 	}
 }
 
+// console.log(`UNSHUFFLED CARD DECK:`);
+// console.log(cardDeck);
+// for (let i=0; i < cardDeck.length; i++) {
+//     console.log(`#${i+1}: ${cardDeck[i].items[0].shape.toUpperCase()} ${cardDeck[i].items[0].color.alias} + ${cardDeck[i].items[1].shape.toUpperCase()} ${cardDeck[i].items[1].color.alias} => ${cardDeck[i].solution[0].shape}`); // ${cardDeck[i].solution[0].shape}
+// }
+
 shuffleCards(cardDeck)
+
+// console.log(`SHUFFLED CARD DECK:`);
+// for (let i=0; i < cardDeck.length; i++) {
+//     console.log(`#${i+1}: ${cardDeck[i].items[0].shape.toUpperCase()} ${cardDeck[i].items[0].color.alias} + ${cardDeck[i].items[1].shape.toUpperCase()} ${cardDeck[i].items[1].color.alias} => ${cardDeck[i].solution[0].shape}`); // ${cardDeck[i].solution[0].shape}
+// }
