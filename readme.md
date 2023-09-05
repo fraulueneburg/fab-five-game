@@ -16,7 +16,7 @@ I used svgs and embedded them inline via the `<use>` element. The colours are dy
 
 - 😎&nbsp;&nbsp; nice simple gaming fun without signup
 - ⏰&nbsp;&nbsp; time adapts when you’re fast
-- 🌄&nbsp;&nbsp; random cheesy motivational quote when you lose a round
+- 🌄&nbsp;&nbsp; random cheesy motivational quote when you’ve lost a round
 - 🌈&nbsp;&nbsp; clever color switching via inline SVGs and CSS custom properties
 - 🌙&nbsp;&nbsp; light and dark mode
 
