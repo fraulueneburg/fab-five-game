@@ -29,30 +29,20 @@ let modalText = document.querySelector('.modal .text')
 let btnWhat = document.querySelector('.btn-what')
 let btnCloseModal = document.querySelectorAll('.close')
 
+timeWrapper.innerHTML = time
+
+btnStart.addEventListener('click', () => startGame())
+btnExamples.addEventListener('click', () => showExamples())
+btnQuestion.addEventListener('click', () => showInstructions())
+btnDrawCard.addEventListener('click', () => drawCard())
+
 function pickRandomArrItem(arr) {
 	const randomNumber = Math.floor(Math.random() * arr.length)
 	return arr[randomNumber]
 }
 
-timeWrapper.innerHTML = time
-
-btnExamples.addEventListener = () => {
-	showExamples()
-}
-btnStart.onclick = () => {
-	startGame()
-}
-btnQuestion.onclick = () => {
-	showInstructions()
-}
-btnDrawCard.onclick = () => {
-	drawCard()
-}
-
 for (let i = 0; i < btnCloseModal.length; i++) {
-	btnCloseModal[i].onclick = () => {
-		closeModal()
-	}
+	btnCloseModal[i].addEventListener('click', () => closeModal())
 }
 
 // ----- START GAME -----
@@ -98,9 +88,7 @@ function drawCard() {
             <svg height="100" width="100" aria-hidden="true" style="color: ${obj2.color.cssColor};"><use href="#${obj2.name}"></svg>
         `
 
-	btnWhat.onclick = () => {
-		explainSolution()
-	}
+	btnWhat.addEventListener('click', () => explainSolution())
 
 	function explainSolution() {
 		modal.classList.add('modal-what')
@@ -170,11 +158,11 @@ function drawCard() {
 		}
 		currentCard.classList.add('flipped')
 		for (let i = 0; i < fabFiveItems.length; i++) {
-			fabFiveItems[i].onclick = () => {
+			fabFiveItems[i].addEventListener('click', () => {
 				checkSolution(fabFiveItems[i])
 				clearInterval(countBackwardsInterval)
 				time = timeMax
-			}
+			})
 		}
 	}
 
@@ -234,7 +222,7 @@ function closeModal() {
 
 	// remove click event from items
 	for (let i = 0; i < fabFiveItems.length; i++) {
-		fabFiveItems[i].onclick = () => {}
+		fabFiveItems[i].addEventListener('click', () => {})
 	}
 
 	// reset card
