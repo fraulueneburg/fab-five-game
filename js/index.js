@@ -144,10 +144,10 @@ function drawCard() {
 			time--
 		} else {
 			rounds < roundsMax ? (btnNextRound.innerHTML = 'Next Round') : (btnNextRound.innerHTML = 'See Score')
-			const randomEncouragement = pickRandomArrItem(encouragementsArr)
+			const randomCheesyQuote = pickRandomArrItem(cheesyQuotesArr)
 			timeWrapper.innerHTML = time
 			btnWhat.innerHTML = `See answer`
-			modalText.innerHTML = `<h3>Oh no! The time is up!</h3><p>But don’t worry.<br>${randomEncouragement}</p>`
+			modalText.innerHTML = `<h3>Oh no! The time is up!</h3><p>But don’t worry.<br>${randomCheesyQuote}</p>`
 			modal.classList.add('modal-timeup')
 			modal.classList.remove('hidden')
 			body.style.overflowY = 'hidden'
@@ -463,7 +463,7 @@ const pityArr = [
 	'Uh-oh.',
 	'Sad but true:',
 ]
-const encouragementsArr = [
+const cheesyQuotesArr = [
 	'Rome wasn’t built in a day.',
 	'It happens to the best of us.',
 	'You’ll be quicker next round.',
@@ -472,20 +472,16 @@ const encouragementsArr = [
 	'You got this!',
 	'The next round will be your round.',
 	'In the middle of difficulty lies opportunity.',
-	'Your are stronger than you think.',
 	'Optimism is the faith that leads to success.',
 	'We believe in you. And unicorns. But mostly you.',
 	'True champions, like the sun, cannot be eclipsed for long.',
 	'We’ve seen slower people play this game.',
-	'The ability to triumph begins with you. Always.',
 	'A champion is defined not by their wins but by how they recover when they fall.',
-	'This difficult time is just a stepping stone along the path to something better.',
-	'Things are going to start looking up soon.',
+	'This difficult time is just a stepping stone along the path to something greater.',
 	'It doesn’t matter how slow you go as long as you don’t stop.',
 	'Faith can move mountains.',
 	'This, too, shall pass.',
 	'One day, you’ll look back on this period in your life and be so glad that you never gave up.',
-	'Confidence is the most beautiful thing you can wear.',
 	'The only time you run out of chances is when you stop taking them.',
 	'Every round may not be a good round, but there’s something good in every round.',
 	'You grow through what you go through.',
