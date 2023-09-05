@@ -537,6 +537,12 @@ footer a {
 
 /*---------- RESPONSIVENESS ----------*/
 
+@media (min-width: 500px) {
+    .game-started .play-footer {
+        margin-top: 2rem;
+    }
+}
+
 @media (max-width: 768px) {
     .play-head .rounds {
         flex: 0 0 100%;
@@ -547,12 +553,6 @@ footer a {
     }
     .example-text p:not(:last-child) {
         margin-bottom: 0;
-    }
-}
-
-@media (min-width: 500px) {
-    .game-started .play-footer {
-        margin-top: 2rem;
     }
 }
 
@@ -580,7 +580,6 @@ footer a {
     }
     header {
         padding: 2rem 75px 0;
-        text-align: center;
     }
     footer {
         font-size: 1.2rem;
@@ -620,5 +619,11 @@ footer a {
 @media (max-width: 1023px) {
     .intro p br {
         display: none;
+    }
+}
+
+@media (min-width: 1024px) {
+    header {
+        text-align: center;
     }
 }
