@@ -105,11 +105,11 @@ function drawCard() {
 	function explainSolution() {
 		modal.classList.add('modal-what')
 		let explanation
-		const colorOnCardMatch =
+		const solutionIsOriginalColor =
 			(rightAnswer.shape === obj1.shape && rightAnswer.color.alias === obj1.color.alias) ||
 			(rightAnswer.shape === obj2.shape && rightAnswer.color.alias === obj2.color.alias)
 
-		if (colorOnCardMatch) {
+		if (solutionIsOriginalColor) {
 			explanation = `
                     <div class="images">
                         <svg height="100" width="100" aria-hidden="true" style="color: ${rightAnswer.color.cssColor};">
@@ -137,30 +137,6 @@ function drawCard() {
 		modalText.innerHTML = explanation
 	}
 
-	// start css shuffle animation (1s), after 1s show random card
-	// check solution on click
-	// start backwards counter
-	for (let i = 0; i < cards.length; i++) {
-		cards[i].style.animation = ''
-		cards[i].style.animationPlayState = 'running'
-	}
-	const timeOutShuffleAnimation = setTimeout(() => {
-		for (let i = 0; i < cards.length; i++) {
-			cards[i].style.animation = 'none'
-			cards[i].style.animationPlayState = 'paused'
-		}
-		currentCard.classList.add('flipped')
-		for (let i = 0; i < fabFiveItems.length; i++) {
-			fabFiveItems[i].onclick = () => {
-				checkSolution(fabFiveItems[i])
-				clearInterval(countBackwardsInterval)
-				time = timeMax
-			}
-		}
-	}, 1000)
-	timeOutShuffleAnimation()
-	clearTimeout(timeOutShuffleAnimation)
-
 	// if time is up
 	const countBackwardsInterval = setInterval(() => {
 		if (time > 0) {
@@ -178,6 +154,34 @@ function drawCard() {
 			clearInterval(countBackwardsInterval)
 			time = timeMax
 		}
+	}, 1000)
+
+	function startShuffleAnimation() {
+		for (let i = 0; i < cards.length; i++) {
+			cards[i].style.animation = ''
+			cards[i].style.animationPlayState = 'running'
+		}
+	}
+
+	function stopShuffleAnimationAndDrawCard() {
+		for (let i = 0; i < cards.length; i++) {
+			cards[i].style.animation = 'none'
+			cards[i].style.animationPlayState = 'paused'
+		}
+		currentCard.classList.add('flipped')
+		for (let i = 0; i < fabFiveItems.length; i++) {
+			fabFiveItems[i].onclick = () => {
+				checkSolution(fabFiveItems[i])
+				clearInterval(countBackwardsInterval)
+				time = timeMax
+			}
+		}
+	}
+
+	startShuffleAnimation()
+
+	setTimeout(() => {
+		stopShuffleAnimationAndDrawCard()
 	}, 1000)
 }
 
