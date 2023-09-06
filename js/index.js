@@ -119,12 +119,13 @@ function drawCard() {
 			cards[i].style.animationPlayState = 'paused'
 		}
 		currentCard.classList.add('flipped')
+
 		for (let i = 0; i < fabFiveItems.length; i++) {
-			fabFiveItems[i].addEventListener('click', () => {
+			fabFiveItems[i].onclick = () => {
 				checkSolution(fabFiveItems[i])
 				clearInterval(countBackwardsInterval)
 				time = timeMax
-			})
+			}
 		}
 	}
 
@@ -184,7 +185,7 @@ function closeModal() {
 
 	// remove click event from items
 	for (let i = 0; i < fabFiveItems.length; i++) {
-		fabFiveItems[i].addEventListener('click', () => {})
+		fabFiveItems[i].onclick = () => {}
 	}
 
 	// reset card
