@@ -15,14 +15,14 @@ I used svgs and embedded them inline via the `<use>` element. The colours are dy
 ## Features
 
 - 😎&nbsp;&nbsp; nice simple gaming fun without signup
+- 🌈&nbsp;&nbsp; clever color switching via SVGs and CSS custom properties
 - ⏰&nbsp;&nbsp; time adapts when you’re fast
 - 🌄&nbsp;&nbsp; random cheesy motivational quote when you’ve lost a round
-- 🌈&nbsp;&nbsp; clever color switching via inline SVGs and CSS custom properties
 - 🌙&nbsp;&nbsp; light and dark mode
 
 ## Demo
 
-👉&nbsp;&nbsp;Play it at&nbsp;&nbsp;[fraulueneburg.github.io/fab-five-game/](https://fraulueneburg.github.io/fab-five-game/)
+👉&nbsp;&nbsp;Play it at&nbsp;&nbsp;[fraulueneburg.github.io/fab-five-game/](https://fraulueneburg.github.io/fab-five-game/) (no sign-up required)
 
 ## Setup
 
