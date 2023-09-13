@@ -28,11 +28,11 @@ I used inline svgs, then cloned them via the `<use>` element. The colours are dy
 
 ## Content
 
-1. [Setup](#Setup)
-2. [Customization](#Customization)
-3. [Game Rules](#Game_Rules)
-4. [About me](#About_me)
-5. [Contact](#like-thisfollow-my-progress)
+1. [Setup](#1-setup)
+2. [Customization](#2-customization)
+3. [Game Rules](#3-game-rules)
+4. [About me](#4-about-me)
+5. [Contact](#5-like-this-project-follow-my-progress-and-lets-connect)
 
 ## 1. Setup
 
@@ -61,7 +61,7 @@ The shapes are embedded as inline svgs in `index.html`. The wrapper code for all
 </svg>
 ```
 
-Inside that wrapper code, paste the inline svg code of your items and wrap each one with the following `<symbol>` tag. Adjust the number inside the `id` attribute accordingly (item01, item02 etc.). Make sure your svg has a square artboard so all items will be displayed correctly.
+Inside that wrapper code, paste the inline svg code of your items and wrap each one with the following `<symbol>` tag. Adjust the number inside the `id` attribute accordingly (`item01`, `item02` etc.). Make sure your svg has a square artboard so all items will be displayed correctly.
 
 ```html
 <symbol id="item01" focusable="false" role="none" viewBox="0 0 160 160">
@@ -94,7 +94,7 @@ The rules are explained on the startscreen of the game as well as throughout the
 I’m a Full Stack Web Developer and UI/UX Designer currently living in Hamburg, Germany.  
 Usability is a top priority in my work and I am also strongly advocating for (and keep learning about) web accessibility.
 
-## Like this project? <br />Follow my progress and let’s connect:
+## 5. Like this project? <br />Follow my progress and let’s connect:
 
 <a href="https://linkedin.com/in/fraulueneburg" target="_blank">
 <img alt="LinkedIn" src="https://img.shields.io/badge/-linkedin-1572B6?&style=for-the-badge&logo=css3&logoColor=white" />
