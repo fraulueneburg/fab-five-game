@@ -344,7 +344,7 @@ function createCardDeck(items, colors) {
 				card2_item1.shape === card1_item2.shape &&
 				card2_item1.color.alias === card1_item2.color.alias &&
 				card1_solution.shape === card2_solution.shape &&
-				card1_solution.color.name === card2_solution.color.name
+				card1_solution.color.alias === card2_solution.color.alias
 			) {
 				cardDeck.splice(m, 1)
 			}
@@ -356,23 +356,23 @@ function createCardDeck(items, colors) {
 if (prefersDarkScheme.matches) {
 	cardDeck = []
 	document.documentElement.classList.add('dark-theme')
-	createCardDeck(itemsDarkArr, colorsDarkArr)
+	createCardDeck(itemsDarkArr, colorsArr)
 } else {
 	cardDeck = []
 	document.documentElement.classList.add('light-theme')
-	createCardDeck(itemsLightArr, colorsLightArr)
+	createCardDeck(itemsLightArr, colorsArr)
 }
 
 // change color mode on button click
 btnColorMode.addEventListener('click', () => {
 	if (document.documentElement.classList.contains('dark-theme')) {
 		cardDeck = []
-		createCardDeck(itemsLightArr, colorsLightArr)
+		createCardDeck(itemsLightArr, colorsArr)
 		document.documentElement.classList.add('light-theme')
 		document.documentElement.classList.remove('dark-theme')
 	} else {
 		cardDeck = []
-		createCardDeck(itemsDarkArr, colorsDarkArr)
+		createCardDeck(itemsDarkArr, colorsArr)
 		document.documentElement.classList.add('dark-theme')
 		document.documentElement.classList.remove('light-theme')
 	}
