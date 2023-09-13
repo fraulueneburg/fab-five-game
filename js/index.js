@@ -11,7 +11,7 @@ for (let i = 0; i < btnCloseModal.length; i++) {
 
 function startGame() {
 	body.classList.toggle('game-started')
-	btnQuestion.classList.remove('hidden')
+	btnQuestion.parentElement.classList.remove('hidden')
 	btnStart.innerHTML = 'Resume Game'
 }
 
@@ -131,9 +131,15 @@ function drawCard() {
 
 	startShuffleAnimation()
 
-	setTimeout(() => {
-		stopShuffleAnimationAndDrawCard()
-	}, 1000)
+	if (prefersReducedMotion) {
+		setTimeout(() => {
+			stopShuffleAnimationAndDrawCard()
+		}, 250)
+	} else {
+		setTimeout(() => {
+			stopShuffleAnimationAndDrawCard()
+		}, 1000)
+	}
 }
 
 // ----- CHECK SOLUTION -----
