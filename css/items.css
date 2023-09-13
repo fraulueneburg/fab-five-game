@@ -1,0 +1,15 @@
+/*---------- THEMING ----------*/
+.dark-theme {
+    --item01-color: #ff00ff;
+    --item02-color: #08dd08;
+    --item03-color: #00dae6;
+    --item04-color: #ffff00;
+    --item05-color: #6e02c1;
+}
+.light-theme {
+    --item01-color: #de1f26;
+    --item02-color: #197f36;
+    --item03-color: #4c5aa8;
+    --item04-color: #eee8e7;
+    --item05-color: #747484;
+}

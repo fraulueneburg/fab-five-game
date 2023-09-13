@@ -1,11 +1,5 @@
 /*---------- BASE ----------*/
 .dark-theme {
-    --item01-color: #ff00ff;
-    --item02-color: #08dd08;
-    --item03-color: #00dae6;
-    --item04-color: #ffff00;
-    --item05-color: #6e02c1;
-
     --bg-inner: #276d63;
     --bg-outer: #132b34;
     --bg-lighter: #276d63;
@@ -16,12 +10,6 @@
     --text-shadow-default: 3px 3px rgba(255 255 255 / 10%);
 }
 .light-theme {
-    --item01-color: #de1f26;
-    --item02-color: #197f36;
-    --item03-color: #4c5aa8;
-    --item04-color: #eee8e7;
-    --item05-color: #747484;
-
     --bg-inner: #e3b95e;
     --bg-outer: #dba12d;
     --bg-lighter: #E8C57E;
@@ -30,6 +18,10 @@
     --bg-modal: var(--color-white);
     --item-fill-color: #fff;
     --text-shadow-default: 3px 3px rgba(255 255 255 / 60%);
+}
+.dark-theme .icon-dark-mode,
+.light-theme .icon-light-mode {
+    display: none;
 }
 :root {
     --bg-btn: var(--item03-color);
@@ -138,6 +130,17 @@ button, .btn {
 .btn-ok {
     background-color: var(--bg-btn-ok);
 }
+.btn-color-mode svg {
+    width: 30px;
+    height: 30px;
+    overflow: visible;
+}
+.btn-color-mode .icon-light-mode {
+    height: 30px;
+    margin: 6px;
+    overflow: visible;
+    width: 30px;
+}
 button:hover,
 .btn:hover {
     box-shadow: inset 0 0 100px rgb(0 0 0 / 30%);
@@ -189,6 +192,9 @@ nav ul li a:hover {
         transform: scale(1.2) rotate(10deg);
     }
     transition: var(--transition-default);
+}
+nav ul li a:hover svg {
+    filter: drop-shadow(var(--text-shadow-default));
 }
 
 
@@ -613,6 +619,12 @@ footer a {
         font-size: 2.4rem;
         height: 50px;
         width: 50px;
+    }
+    .btn-color-mode .icon-light-mode {
+        height: 35px;
+        margin: 8px 0 0 2px;
+        overflow: visible;
+        width: 35px;
     }
     header {
         padding: 1.5rem 0;
