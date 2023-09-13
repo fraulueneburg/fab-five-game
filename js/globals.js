@@ -9,6 +9,10 @@ let rightAnswer
 let gameover = false
 
 const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)')
+const prefersReducedMotion =
+	window.matchMedia(`(prefers-reduced-motion: reduce)`) === true ||
+	window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true
+
 let body = document.body
 let btnStart = document.querySelector('.btn-start')
 let btnQuestion = document.querySelector('.btn-question')

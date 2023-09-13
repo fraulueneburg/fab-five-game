@@ -131,9 +131,15 @@ function drawCard() {
 
 	startShuffleAnimation()
 
-	setTimeout(() => {
-		stopShuffleAnimationAndDrawCard()
-	}, 1000)
+	if (prefersReducedMotion) {
+		setTimeout(() => {
+			stopShuffleAnimationAndDrawCard()
+		}, 250)
+	} else {
+		setTimeout(() => {
+			stopShuffleAnimationAndDrawCard()
+		}, 1000)
+	}
 }
 
 // ----- CHECK SOLUTION -----
