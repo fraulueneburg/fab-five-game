@@ -136,10 +136,10 @@ button, .btn {
     overflow: visible;
 }
 .btn-color-mode .icon-light-mode {
-    width: 35px;
-    height: 35px;
+    height: 30px;
+    margin: 6px;
     overflow: visible;
-    margin: 8px 0 0 2px;
+    width: 30px;
 }
 button:hover,
 .btn:hover {
@@ -619,6 +619,12 @@ footer a {
         font-size: 2.4rem;
         height: 50px;
         width: 50px;
+    }
+    .btn-color-mode .icon-light-mode {
+        height: 35px;
+        margin: 8px 0 0 2px;
+        overflow: visible;
+        width: 35px;
     }
     header {
         padding: 1.5rem 0;
