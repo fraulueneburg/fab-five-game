@@ -2,7 +2,7 @@
 
 # The Fab Five Game
 
-### 👉&nbsp;&nbsp;Play it at&nbsp;&nbsp;[fraulueneburg.github.io/fab-five-game/](https://fraulueneburg.github.io/fab-five-game/)
+### <span aria-hidden="true">👉&nbsp;&nbsp;</span>Play it at&nbsp;&nbsp;[fraulueneburg.github.io/fab-five-game/](https://fraulueneburg.github.io/fab-five-game/)
 
 <br />
 
@@ -10,21 +10,31 @@
 
 This is a project that I made at Ironhack as part of their 2023 Web Development Bootcamp. It is a logic game, based on a German card game. I’m especially proud that I built it entirely in Javascript, HTML and CSS – no canvas elements here.
 
-I used svgs and embedded them inline via the `<use>` element. The colours are dynamically switched via CSS custom properties. The side comes with dark and light mode and scales to mobile (but is more fun on bigger devices).
+I used inline svgs, then cloned them via the `<use>` element. The colours are dynamically switched via CSS custom properties. The side comes with dark and light mode and scales to mobile.
 
 ## Features
 
-- 😎&nbsp;&nbsp; nice simple gaming fun without signup
-- 🌈&nbsp;&nbsp; clever color switching via SVGs and CSS custom properties
-- ⏰&nbsp;&nbsp; time adapts when you’re fast
-- 🌄&nbsp;&nbsp; random cheesy motivational quote when you’ve lost a round
-- 🌙&nbsp;&nbsp; light and dark mode
+- <span aria-hidden="true">😎&nbsp;&nbsp; </span>nice simple gaming fun without signup
+- <span aria-hidden="true">🌈&nbsp;&nbsp; </span>clever colour switching via SVGs and CSS custom properties
+- <span aria-hidden="true">⏰&nbsp;&nbsp; </span>time adapts when you’re fast
+- <span aria-hidden="true">🌄&nbsp;&nbsp; </span>random cheesy motivational quote when you’ve lost a round
+- <span aria-hidden="true">🌙&nbsp;&nbsp; </span>light and dark mode
 
 ## Demo
 
-👉&nbsp;&nbsp;Play it at&nbsp;&nbsp;[fraulueneburg.github.io/fab-five-game/](https://fraulueneburg.github.io/fab-five-game/) (no sign-up required)
+<span aria-hidden="true">👉&nbsp;&nbsp;</span>Play it at&nbsp;&nbsp;[fraulueneburg.github.io/fab-five-game/](https://fraulueneburg.github.io/fab-five-game/) (no sign-up required)
 
-## Setup
+---
+
+## Content
+
+1. [Setup](#Setup)
+2. [Customization](#Customization)
+3. [Game Rules](#Game_Rules)
+4. [About me](#About_me)
+5. [Contact](#like-thisfollow-my-progress)
+
+## 1. Setup
 
 If you’d like to view my game in your browser:
 
@@ -33,11 +43,53 @@ If you’d like to view my game in your browser:
 - open `index.html`
 - or, you know, just visit [the game demo](https://fraulueneburg.github.io/fab-five-game/) and start the gaming fun right away 🚀
 
-## Rules
+## 2. Customization
+
+### Item Colours
+
+To customize the item colours, just change the CSS custom properties inside `css/items.css`.
+
+### Shapes
+
+The shapes are embedded as inline svgs in `index.html`. The wrapper code for all svgs stays the same:
+
+```html
+<svg display="none" width="0" height="0" version="1.1" role="none" xmlns="http://www.w3.org/2000/svg">
+	<defs>
+		<!-- CODE FOR ALL SVGS -->
+	</defs>
+</svg>
+```
+
+Inside that wrapper code, paste the inline svg code of your items and wrap each one with the following `<symbol>` tag. Adjust the number inside the `id` attribute accordingly (item01, item02 etc.). Make sure your svg has a square artboard so all items will be displayed correctly.
+
+```html
+<symbol id="item01" focusable="false" role="none" viewBox="0 0 160 160">
+	<!-- svg code of first item -->
+</symbol>
+```
+
+Put together, it looks like this:
+
+```html
+<svg display="none" width="0" height="0" version="1.1" role="none" xmlns="http://www.w3.org/2000/svg">
+	<defs>
+		<symbol id="item01" focusable="false" role="none" viewBox="0 0 160 160">
+			<!-- svg code of first item -->
+		</symbol>
+		<symbol id="item02" focusable="false" role="none" viewBox="0 0 160 160">
+			<!-- svg code of second item -->
+		</symbol>
+		<!-- ... etc ... --->
+	</defs>
+</svg>
+```
+
+## 3. Game Rules
 
 The rules are explained on the startscreen of the game as well as throughout the game.
 
-## About me
+## 4. About me
 
 I’m a Full Stack Web Developer and UI/UX Designer currently living in Hamburg, Germany.  
 Usability is a top priority in my work and I am also strongly advocating for (and keep learning about) web accessibility.
