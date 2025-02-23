@@ -248,6 +248,7 @@ footer a {
 
 /* intro screens */
 .intro {
+	flex: 2;
 	margin-top: 1rem;
 }
 .game-started .intro {
@@ -301,11 +302,12 @@ footer a {
 
 /* five items */
 .fab-five-items {
+	align-items: center;
 	display: flex;
 	flex: 1;
+	flex-wrap: wrap;
 	justify-content: center;
 	margin: 1rem 0;
-	flex-wrap: wrap;
 }
 .fab-five-items a {
 	cursor: default;
