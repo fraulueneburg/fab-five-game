@@ -1,689 +1,753 @@
 /*---------- BASE ----------*/
 .dark-theme {
-    --bg-inner: #276d63;
-    --bg-outer: #132b34;
-    --bg-lighter: #276d63;
-    --color-text: #dcdcdc;
+	--bg-inner: #276d63;
+	--bg-outer: #132b34;
+	--bg-lighter: #276d63;
+	--color-text: #dcdcdc;
 
-    --bg-modal: rgba(39 109 99 / 90%);
-    --item-fill-color: var(--bg-inner);
-    --text-shadow-default: 3px 3px rgba(255 255 255 / 10%);
+	--bg-modal: rgba(39 109 99 / 90%);
+	--item-fill-color: var(--bg-inner);
+	--text-shadow-default: 3px 3px rgba(255 255 255 / 10%);
 }
 .light-theme {
-    --bg-inner: #e3b95e;
-    --bg-outer: #dba12d;
-    --bg-lighter: #E8C57E;
-    --color-text: #222;
+	--bg-inner: #e3b95e;
+	--bg-outer: #dba12d;
+	--bg-lighter: #e8c57e;
+	--color-text: #222;
 
-    --bg-modal: var(--color-white);
-    --item-fill-color: #fff;
-    --text-shadow-default: 3px 3px rgba(255 255 255 / 60%);
+	--bg-modal: var(--color-white);
+	--item-fill-color: #fff;
+	--text-shadow-default: 3px 3px rgba(255 255 255 / 60%);
 }
 .dark-theme .icon-dark-mode,
 .light-theme .icon-light-mode {
-    display: none;
+	display: none;
 }
 :root {
-    --bg-btn: var(--item03-color);
-    --bg-btn-ok: var(--item02-color);
-    --color-white: #fff;
-    --color-btn: #fff;
-    
-    --border-color-default: var(--color-text);
-    --border-width-default: 4px;
-    --border-style-default: solid;
-    --border-default: var(--border-width-default) var(--border-style-default) var(--border-color-default);
+	--bg-btn: var(--item03-color);
+	--bg-btn-ok: var(--item02-color);
+	--color-white: #fff;
+	--color-btn: #fff;
 
-    --footer-height: 70px;
-    --font-family-default: "DM Sans", sans-serif;
+	--border-color-default: var(--color-text);
+	--border-width-default: 4px;
+	--border-style-default: solid;
+	--border-default: var(--border-width-default) var(--border-style-default) var(--border-color-default);
+
+	--footer-height: 70px;
+	--font-family-default: 'DM Sans', sans-serif;
 }
 @media (prefers-reduced-motion: no-preference) {
-    :root {
-        --transition-default: all 0.3s ease;
-    }
+	:root {
+		--transition-default: all 0.3s ease;
+	}
+}
+html {
+	height: 100%;
 }
 body {
-    background-color: var(--bg-outer);
-    color: var(--color-text);
-    display: flex;
-    flex-direction: column;
-    font-family: var(--font-family-default);
-    font-size: 1.1rem;
-    height: 100%;
-    line-height: 1.4;
-    margin: 0;
-    min-height: calc(100vh);
-    padding: 0;
-    text-align: center;
+	background-color: var(--bg-outer);
+	color: var(--color-text);
+	display: flex;
+	flex-direction: column;
+	font-family: var(--font-family-default);
+	font-size: 1.1rem;
+	height: 100%;
+	line-height: 1.4;
+	margin: 0;
+	min-height: calc(100vh);
+	padding: 0;
+	text-align: center;
 }
 .container {
-    padding: 0 1.2rem;
+	padding: 0 1.2rem;
 }
 main .container {
-    margin: 0 auto;
-    max-width: 860px;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	height: 100%;
+	margin: 0 auto;
+	max-width: 860px;
 }
 main {
-    background: radial-gradient(var(--bg-inner) 0%, var(--bg-outer) 75%);
-    flex: 1;
-    padding: 2rem 0 3rem;
+	background: radial-gradient(var(--bg-inner) 0%, var(--bg-outer) 75%);
+	flex: 1;
+	padding: 2rem 0 0;
 }
-.hidden { display: none !important; }
-
+.hidden {
+	display: none !important;
+}
 
 /*---------- TYPOGRAPHY ----------*/
 
-h1, h2, h3 {
-    border-bottom: var(--border-default);
-    display: inline-block;
-    font-weight: 700;
-    margin: 0 0 1rem;
+h1,
+h2,
+h3 {
+	border-bottom: var(--border-default);
+	display: inline-block;
+	font-weight: 700;
+	margin: 0 0 1rem;
 }
 h1 {
-    border: none;
-    font-size: 1.25rem;
-    letter-spacing: 4px;
-    line-height: 1.1;
-    margin-bottom: 0;
-    text-shadow: var(--text-shadow-default);
+	border: none;
+	font-size: 1.25rem;
+	letter-spacing: 4px;
+	line-height: 1.1;
+	margin-bottom: 0;
+	text-shadow: var(--text-shadow-default);
 }
 h2 {
-    font-size: 1.8rem;
-    line-height: 1.1;
-    margin: 0 0 1.5rem;
+	font-size: 1.8rem;
+	line-height: 1.1;
+	margin: 0 0 1.5rem;
 }
 p {
-    margin: 0 0 2rem;
+	margin: 0 0 2rem;
 }
 .highlighted {
-    font-weight: bold;
-    background-color: rgba(255,255,255,0.3);
-    padding: 0 5px;
+	font-weight: bold;
+	background-color: rgba(255, 255, 255, 0.3);
+	padding: 0 5px;
 }
-
 
 /*---------- LINKS, BUTTONS ----------*/
 
 a {
-    color: var(--color-text);
-    text-decoration: none;
+	color: var(--color-text);
+	text-decoration: none;
 }
-a, button, .btn {
-    cursor: pointer;
-    transition: var(--transition-default);
+a,
+button,
+.btn {
+	cursor: pointer;
+	transition: var(--transition-default);
 }
-button, .btn {
-    background-color: var(--bg-btn);
-    border-radius: 8px;
-    border: none;
-    color: var(--color-btn);
-    display: block;
-    font-family: var(--font-family-default);
-    font-size: 1.2rem;
-    font-weight: bold;
-    letter-spacing: 1px;
-    margin: 0 auto 15px;
-    min-height: 48px;
-    padding: 15px 20px;
-    text-transform: uppercase;
+button,
+.btn {
+	background-color: var(--bg-btn);
+	border-radius: 8px;
+	border: none;
+	color: var(--color-btn);
+	display: block;
+	font-family: var(--font-family-default);
+	font-size: 1.2rem;
+	font-weight: bold;
+	letter-spacing: 1px;
+	margin: 0 auto 15px;
+	min-height: 48px;
+	padding: 15px 20px;
+	text-transform: uppercase;
 }
 .btn-ok {
-    background-color: var(--bg-btn-ok);
+	background-color: var(--bg-btn-ok);
 }
 .btn-color-mode svg {
-    width: 30px;
-    height: 30px;
-    overflow: visible;
+	width: 30px;
+	height: 30px;
+	overflow: visible;
 }
 .btn-color-mode .icon-light-mode {
-    height: 30px;
-    margin: 6px;
-    overflow: visible;
-    width: 30px;
+	height: 30px;
+	margin: 6px;
+	overflow: visible;
+	width: 30px;
 }
 button:hover,
 .btn:hover {
-    box-shadow: inset 0 0 100px rgb(0 0 0 / 30%);
-    transition: var(--transition-default);
-    @media (prefers-reduced-motion: no-preference) {
-        transform: scale(1.1);
-    }
+	box-shadow: inset 0 0 100px rgb(0 0 0 / 30%);
+	transition: var(--transition-default);
+	@media (prefers-reduced-motion: no-preference) {
+		transform: scale(1.1);
+	}
 }
 .btn-group button,
 .btn-group .btn {
-    display: inline-block;
-    margin-left: 10px;
-    margin-right: 10px;
+	display: inline-block;
+	margin-left: 10px;
+	margin-right: 10px;
 }
-
 
 /*---------- NAV ----------*/
 nav ul {
-    display: flex;
-    gap: 1rem;
+	display: flex;
+	gap: 1rem;
 }
 nav ul,
 ul.unstyled {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+	list-style: none;
+	padding: 0;
+	margin: 0;
 }
 nav ul li,
 ul.unstyled li {
-    padding: 0;
-    margin: 0;
+	padding: 0;
+	margin: 0;
 }
 nav ul li {
-    text-align: center;
+	text-align: center;
 }
 nav ul li a {
-    border-radius: 50%;
-    border: var(--border-width-default) solid var(--border-color-default);
-    display: block;
-    font-size: 2rem;
-    font-weight: 700;
-    height: 40px;
-    transition: var(--transition-default);
-    width: 40px;
+	border-radius: 50%;
+	border: var(--border-width-default) solid var(--border-color-default);
+	display: block;
+	font-size: 2rem;
+	font-weight: 700;
+	height: 40px;
+	transition: var(--transition-default);
+	width: 40px;
 }
 nav ul li a:hover {
-    text-shadow: var(--text-shadow-default);
-    @media (prefers-reduced-motion: no-preference) {
-        transform: scale(1.2) rotate(10deg);
-    }
-    transition: var(--transition-default);
+	text-shadow: var(--text-shadow-default);
+	@media (prefers-reduced-motion: no-preference) {
+		transform: scale(1.2) rotate(10deg);
+	}
+	transition: var(--transition-default);
 }
 nav ul li a:hover svg {
-    filter: drop-shadow(var(--text-shadow-default));
+	filter: drop-shadow(var(--text-shadow-default));
 }
-
 
 /*---------- HEADER ----------*/
 
 header {
-    background-color: var(--bg-outer);
-    border-bottom: var(--border-width-default) dashed var(--border-color-default);
-    position: relative;
-    padding: 0.75rem 0 1rem;
-    text-align: left;
+	background-color: var(--bg-outer);
+	border-bottom: var(--border-width-default) dashed var(--border-color-default);
+	position: relative;
+	padding: 0.75rem 0 1rem;
+	text-align: left;
 }
 
 header .container {
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 1rem;
-    justify-content: space-between;
-    align-items: center;
+	display: flex;
+	flex-wrap: nowrap;
+	gap: 1rem;
+	justify-content: space-between;
+	align-items: center;
 }
-
 
 /*---------- FOOTER ----------*/
 
 footer {
-    background-color: var(--bg-outer);
-    border-top: var(--border-width-default) dashed var(--border-color-default);
-    box-sizing: border-box;
-    font-size: 1rem;
-    font-weight: 500;
-    height: var(--footer-height);
-    padding: 1rem 0;
-    position: relative;
-    text-align: center;
-    z-index: 200;
+	background-color: var(--bg-outer);
+	border-top: var(--border-width-default) dashed var(--border-color-default);
+	box-sizing: border-box;
+	font-size: 1rem;
+	font-weight: 500;
+	height: var(--footer-height);
+	padding: 1rem 0;
+	position: relative;
+	text-align: center;
+	z-index: 200;
 }
 footer a {
-    border-bottom: 1px solid currentColor;
+	border-bottom: 1px solid currentColor;
 }
-
 
 /*---------- CONTENT ----------*/
 
 /* intro screens */
 .intro {
-    margin-top: 1rem;
+	margin-top: 1rem;
 }
 .game-started .intro {
-    display: none;
+	display: none;
 }
 .example-text {
-    font-size: 1.3rem;
+	font-size: 1.3rem;
 }
 .example-text .card {
-    outline-width: 10px;
-    display: block;
-    margin: 10px auto 2rem;
-    width: 110px;
-    height: 170px;
+	outline-width: 10px;
+	display: block;
+	margin: 10px auto 2rem;
+	width: 110px;
+	height: 170px;
 }
 .example-text .card.flipped,
 .example-text .card.flipped .back {
-    transform: rotateY(0deg);
+	transform: rotateY(0deg);
 }
 
 /* play area head and footer */
 .play-head,
 .play-footer {
-    display: none;
-    position: relative;
+	display: none;
+	position: relative;
 }
 .play-head {
-    justify-content: space-between;
-    align-items: center;
+	justify-content: space-between;
+	align-items: center;
 }
 .play-head h2 {
-    margin: 0;
+	margin: 0;
 }
 .game-started .play-head {
-    display: flex;
-    flex-wrap: wrap;
+	display: flex;
+	flex-wrap: wrap;
 }
 .play-head .wins {
-    order: -1;
+	order: -1;
 }
 .play-head .wins .num,
 .play-head .time .num {
-    display: block;
-    font-size: 2rem;
-    line-height: 1.1;
-    font-weight: bold;
+	display: block;
+	font-size: 2rem;
+	line-height: 1.1;
+	font-weight: bold;
 }
 .game-started .play-footer {
-    display: block;
+	display: block;
 }
 
 /* five items */
 .fab-five-items {
-    display: flex;
-    justify-content: center;
-    margin: 1rem 0;
-    flex-wrap: wrap;
+	display: flex;
+	flex: 1;
+	justify-content: center;
+	margin: 1rem 0;
+	flex-wrap: wrap;
 }
 .fab-five-items a {
-    cursor: default;
+	cursor: default;
 }
 .round-started .fab-five-items a {
-    cursor: pointer;
+	cursor: pointer;
 }
 .game-started .fab-five-items {
-    margin: 1rem 0 0rem;
+	margin: 1rem 0 0rem;
 }
 .fab-five-items li {
-    transform: scale(0.8);
-    @media (prefers-reduced-motion: no-preference) {
-        transition: all 0.7s ease;
-    }
+	transform: scale(0.8);
+	@media (prefers-reduced-motion: no-preference) {
+		transition: all 0.7s ease;
+	}
 }
 .fab-five-items li:hover {
-    @media (prefers-reduced-motion: no-preference) {
-        transform: scale(1.0);
-        transition: all 0.2s ease;
-    }
+	@media (prefers-reduced-motion: no-preference) {
+		transform: scale(1);
+		transition: all 0.2s ease;
+	}
 }
 .game-started .fab-five-items li {
-    margin: 0;
-    transform: scale(1.0);
-    @media (prefers-reduced-motion: no-preference) {
-        transition: all 0.7s ease;
-    }
+	margin: 0;
+	transform: scale(1);
+	@media (prefers-reduced-motion: no-preference) {
+		transition: all 0.7s ease;
+	}
 }
 .game-started .fab-five-items li:hover {
-    @media (prefers-reduced-motion: no-preference) {
-        transform: scale(1.2);
-        transition: all 0.2s ease;
-    }
+	@media (prefers-reduced-motion: no-preference) {
+		transform: scale(1.2);
+		transition: all 0.2s ease;
+	}
 }
-
 
 /*---------- CARDS ----------*/
 
 .btn-draw-card {
-    bottom: 7rem;
-    position: absolute;
-    right: auto;
-    width: auto;
-    z-index: 50;
-    margin: 0 auto;
-    min-width: 250px;
-    left: 50%;
-    transform: translate(-50%, -20%);
+	bottom: 7rem;
+	position: absolute;
+	right: auto;
+	width: auto;
+	z-index: 50;
+	margin: 0 auto;
+	min-width: 250px;
+	left: 50%;
+	transform: translate(-50%, -20%);
 }
 
 .btn-draw-card:hover {
-    @media (prefers-reduced-motion: no-preference) {
-        transform: translate(-50%, -20%) scale(1.1);
-    }
+	@media (prefers-reduced-motion: no-preference) {
+		transform: translate(-50%, -20%) scale(1.1);
+	}
 }
 
 .cards {
-    position: relative;
-    overflow: hidden;
-    margin: 0 calc(-100vw / 2 + 100% / 2) -4rem;
-    max-width: 100vw;
-    height: 310px;
+	position: relative;
+	margin: 0 calc(-100vw / 2 + 100% / 2);
+	max-width: 100vw;
+	height: 310px;
 }
 
 .cards .card:not(.current) {
-    position: absolute;
-    top: 0;
-    z-index: 5;
+	position: absolute;
+	top: 0;
+	z-index: 5;
 }
 
 .card {
-    @media (prefers-reduced-motion: no-preference) {
-        animation-duration: 0.8s;
-        animation-play-state: paused;
-        animation-iteration-count: 2s;
-    }
-    background: repeating-linear-gradient( 45deg, var(--bg-lighter), var(--bg-lighter) 10px, var(--bg-outer) 10px, var(--bg-outer) 20px);
-    border-radius: 8px;
-    box-shadow: 0 0 20px 0 rgba(34,34,34,0.5);
-    display: block;
-    height: 280px;
-    margin: 2rem auto 3rem;
-    outline: 12px solid var(--color-white);
-    width: 210px;
+	@media (prefers-reduced-motion: no-preference) {
+		animation-duration: 0.8s;
+		animation-play-state: paused;
+		animation-iteration-count: 2s;
+	}
+	background: repeating-linear-gradient(
+		45deg,
+		var(--bg-lighter),
+		var(--bg-lighter) 10px,
+		var(--bg-outer) 10px,
+		var(--bg-outer) 20px
+	);
+	border-radius: 8px;
+	box-shadow: 0 0 20px 0 rgba(34, 34, 34, 0.5);
+	display: block;
+	height: 280px;
+	margin: 2rem auto 0;
+	outline: 12px solid var(--color-white);
+	width: 210px;
 }
-
 
 /*---------- CARDS ANIMATION ----------*/
 
 @media (prefers-reduced-motion: no-preference) {
-    @keyframes shufflecard1 {
-        25%  { top:-1rem; right: 48%; transform: rotate(7deg); z-index: 70; }
-        100% { right: 57%; transform: rotate(-30deg); z-index: 10; }
-    }
-    @keyframes shufflecard2 {
-        25%  { top:-1rem; right: 43%; top: 0; transform: rotate(10deg); z-index: 50; }
-        100% { right: 50%; top: 3rem; transform: rotate(-20deg); }
-    }
-    @keyframes shufflecard3 {
-        10% { margin-top: 4rem; }
-        25% { margin-top: 4rem }
-        30% { margin-top: 3rem }
-    }
-    @keyframes shufflecard4 {
-        25%  { top:-1rem; left: 43%; top: 0; transform: rotate(-10deg); z-index: 60; }
-        100% { left: 50%; top: 3rem; transform: rotate(20deg); }
-    }
-    @keyframes shufflecard5 {
-        25%  { top:-1rem; left: 48%; transform: rotate(-7deg); z-index: 80; }
-        100% { left: 57%; transform: rotate(30deg); z-index: 10; }
-    }
+	@keyframes shufflecard1 {
+		25% {
+			top: -1rem;
+			right: 48%;
+			transform: rotate(7deg);
+			z-index: 70;
+		}
+		100% {
+			right: 57%;
+			transform: rotate(-30deg);
+			z-index: 10;
+		}
+	}
+	@keyframes shufflecard2 {
+		25% {
+			top: -1rem;
+			right: 43%;
+			top: 0;
+			transform: rotate(10deg);
+			z-index: 50;
+		}
+		100% {
+			right: 50%;
+			top: 3rem;
+			transform: rotate(-20deg);
+		}
+	}
+	@keyframes shufflecard3 {
+		10% {
+			margin-top: 4rem;
+		}
+		25% {
+			margin-top: 4rem;
+		}
+		30% {
+			margin-top: 3rem;
+		}
+	}
+	@keyframes shufflecard4 {
+		25% {
+			top: -1rem;
+			left: 43%;
+			top: 0;
+			transform: rotate(-10deg);
+			z-index: 60;
+		}
+		100% {
+			left: 50%;
+			top: 3rem;
+			transform: rotate(20deg);
+		}
+	}
+	@keyframes shufflecard5 {
+		25% {
+			top: -1rem;
+			left: 48%;
+			transform: rotate(-7deg);
+			z-index: 80;
+		}
+		100% {
+			left: 57%;
+			transform: rotate(30deg);
+			z-index: 10;
+		}
+	}
 }
 .cards > .card:first-child {
-    animation-name: shufflecard1;
-    animation-delay: 0.4s;
-    right: 57%;
-    transform: rotate(-30deg);
-    z-index: 10;
-    top: 3.5rem;
+	animation-name: shufflecard1;
+	animation-delay: 0.4s;
+	right: 57%;
+	transform: rotate(-30deg);
+	z-index: 10;
+	top: 3.5rem;
 }
 .cards > .card:nth-child(2) {
-    animation-name: shufflecard2;
-    right: 50%;
-    transform: rotate(-20deg);
-    z-index: 20;
-    top: 3rem;
+	animation-name: shufflecard2;
+	right: 50%;
+	transform: rotate(-20deg);
+	z-index: 20;
+	top: 3rem;
 }
 .cards > .card:nth-last-child(2) {
-    animation-name: shufflecard4;
-    animation-delay: 0.2s;
-    left: 50%;
-    transform: rotate(20deg);
-    z-index: 20;
-    top: 3rem;
+	animation-name: shufflecard4;
+	animation-delay: 0.2s;
+	left: 50%;
+	transform: rotate(20deg);
+	z-index: 20;
+	top: 3rem;
 }
 .cards > .card:last-child {
-    animation-name: shufflecard5;
-    left: 57%;
-    transform: rotate(30deg);
-    z-index: 10;
-    top: 3.5rem;
+	animation-name: shufflecard5;
+	left: 57%;
+	transform: rotate(30deg);
+	z-index: 10;
+	top: 3.5rem;
 }
 
 /*---------- DRAWN CARD ----------*/
 
 .card.current {
-    animation-name: shufflecard3;
-    box-sizing: border-box;
-    left: 0;
-    padding-top: 3rem;
-    position: absolute;
-    right: 0;
-    transform-style: preserve-3d;
-    transform: rotateY(0);
-    @media (prefers-reduced-motion: no-preference) {
-        transition: transform 0.6s;
-    }
-    z-index: 30;
+	animation-name: shufflecard3;
+	box-sizing: border-box;
+	left: 0;
+	padding-top: 3rem;
+	position: absolute;
+	right: 0;
+	transform-style: preserve-3d;
+	transform: rotateY(0);
+	@media (prefers-reduced-motion: no-preference) {
+		transition: transform 0.6s;
+	}
+	z-index: 30;
 }
 .card.flipped {
-    transform: rotateY(180deg);
+	transform: rotateY(180deg);
 }
 .card .front,
 .card .back {
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    border-radius: 8px;
-    position: absolute;
-    height: 100%;
-    top: 0;
-    width: 100%;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	border-radius: 8px;
+	position: absolute;
+	height: 100%;
+	top: 0;
+	width: 100%;
 }
 .card .front {
-    background: repeating-linear-gradient( 45deg, var(--bg-lighter), var(--bg-lighter) 10px, var(--bg-outer) 10px, var(--bg-outer) 20px);
+	background: repeating-linear-gradient(
+		45deg,
+		var(--bg-lighter),
+		var(--bg-lighter) 10px,
+		var(--bg-outer) 10px,
+		var(--bg-outer) 20px
+	);
 }
 .card .back {
-    background: var(--bg-lighter);
-    transform: rotateY(180deg);
+	background: var(--bg-lighter);
+	transform: rotateY(180deg);
 }
 
 /* items on card */
 .card .content {
-    left: 50%;
-    transform: translate(-50%, -50%);
-    position: absolute;
-    top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	position: absolute;
+	top: 50%;
 }
 .card .content > * {
-    display: block;
-    margin: 0 auto;
+	display: block;
+	margin: 0 auto;
 }
 .card .content > *:first-child {
-    transform: rotate(-20deg);
+	transform: rotate(-20deg);
 }
 .card .content > *:last-child {
-    transform: rotate(20deg);
+	transform: rotate(20deg);
 }
-
 
 /*---------- MODALS ----------*/
 
 .modal {
-    background: rgba(0,0,0,0.3);
-    bottom: 0;
-    height: 100vh;
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 100vw;
-    z-index: 500;
+	background: rgba(0, 0, 0, 0.3);
+	border: none;
+	bottom: 0;
+	color: currentColor;
+	height: 100vh;
+	left: 0;
+	padding: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 100vw;
+	z-index: 500;
 }
 .modal .content {
-    background-color: var(--bg-modal);
-    border-radius: 10px;
-    max-width: 220px;
-    margin: 0 auto;
-    padding: 2.5rem 2rem calc(2.5rem - 10px) 2rem;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 90%;
-    transform: translate(-50%, -50%);
+	background-color: var(--bg-modal);
+	border-radius: 10px;
+	max-width: 220px;
+	margin: 0 auto;
+	padding: 2.5rem 2rem calc(2.5rem - 10px) 2rem;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 90%;
+	transform: translate(-50%, -50%);
 }
 .dark-theme .modal,
 .dark-theme .modal .content {
-    backdrop-filter: blur(2px);
+	backdrop-filter: blur(2px);
 }
 .modal h3 {
-    margin-bottom: 0;
+	margin-bottom: 0;
 }
 .modal p {
-    margin: 1rem 0;
+	margin: 1rem 0;
 }
 .modal small {
-    display: block;
-    margin: 1rem 0 1.5rem;
-    font-size: 1.1rem;
+	display: block;
+	margin: 1rem 0 1.5rem;
+	font-size: 1.1rem;
 }
 .modal .images {
-    align-items: center;
-    display: flex;
-    justify-content: center;
+	align-items: center;
+	display: flex;
+	justify-content: center;
 }
 .modal-right .btn-what,
 .modal-wrong .btn-what,
 .modal-timeup .btn-what,
 .modal.modal-gameover .btn-restart {
-    display: inline-block;
+	display: inline-block;
 }
 .modal .btn-restart,
 .modal-what .btn-what,
 .modal-levelup .btn-what,
 .modal-gameover .btn-next-round,
 .modal-gameover .btn-what {
-    display: none;
+	display: none;
 }
 .link-close {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    width: 48px;
-    height: 48px;
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	width: 48px;
+	height: 48px;
 }
 .link-close:before {
-    content: "+";
-    transform: rotate(45deg);
-    display: block;
-    font-size: 2.5rem;
-    line-height: 0.6;
-    position: absolute;
-    right: 0;
-    top: 0;
+	content: '+';
+	transform: rotate(45deg);
+	display: block;
+	font-size: 2.5rem;
+	line-height: 0.6;
+	position: absolute;
+	right: 0;
+	top: 0;
 }
-
 
 /*---------- RESPONSIVENESS ----------*/
 
 @media (min-width: 425px) {
-    body {
-        font-size: 1.2rem;
-    }
-    h1 {
-        font-size: 1.87rem;
-    }
+	body {
+		font-size: 1.2rem;
+	}
+	h1 {
+		font-size: 1.87rem;
+	}
 }
 @media (min-width: 500px) {
-    .game-started .play-footer {
-        margin-top: 2rem;
-    }
+	.game-started .play-footer {
+		margin-top: 2rem;
+	}
 }
-
 @media (max-width: 768px) {
-    .example-text p {
-        margin-bottom: 3rem;
-    }
-    .example-text p:not(:last-child) {
-        margin-bottom: 0;
-    }
+	.example-text p {
+		margin-bottom: 3rem;
+	}
+	.example-text p:not(:last-child) {
+		margin-bottom: 0;
+	}
 }
 
 @media (min-width: 769px) {
-    body {
-        font-size: 1.5rem;
-    }
-    .container {
-        padding: 0 2rem;
-    }
-    h1 {
-        font-size: 3rem;
-    }
-    h2 {
-        font-size: 2.25rem;
-    }
-    button, .btn {
-        font-size: 1.4rem;
-    }
-    nav ul li a {
-        font-size: 2.4rem;
-        height: 50px;
-        width: 50px;
-    }
-    .btn-color-mode .icon-light-mode {
-        height: 35px;
-        margin: 8px 0 0 2px;
-        overflow: visible;
-        width: 35px;
-    }
-    header {
-        padding: 1.5rem 0;
-    }
-    footer {
-        font-size: 1.2rem;
-        text-align: right;
-    }
-    .intro {
-        margin-top: 2rem;
-    }
-    .example-text {
-        display: flex;
-        justify-content: space-between;
-        text-align: left;
-    }
-    .example-text .col {
-        flex: 0 0 48%;
-    }
-    .example-text .card {
-        float: right;
-        margin-left: 2rem;
-        margin-right: 1rem;
-    }
-    .fab-five-items svg {
-        height: 120px;
-        width: 120px;
-    }
-    .game-started .fab-five-items {
-        margin: 1rem 0 0;
-    }
-    .modal .content {
-        min-width: 500px;
-    }
-    .play-head .wins .num,
-    .play-head .time .num {
-        font-size: 2.25rem;
-        line-height: 1.4;
-    }
+	body {
+		font-size: 1.5rem;
+	}
+	.container {
+		padding: 0 2rem;
+	}
+	h1 {
+		font-size: 3rem;
+	}
+	h2 {
+		font-size: 2.25rem;
+	}
+	button,
+	.btn {
+		font-size: 1.4rem;
+	}
+	nav ul li a {
+		font-size: 2.4rem;
+		height: 50px;
+		width: 50px;
+	}
+	.btn-color-mode .icon-light-mode {
+		height: 35px;
+		margin: 8px 0 0 2px;
+		overflow: visible;
+		width: 35px;
+	}
+	header {
+		padding: 1.5rem 0;
+	}
+	footer {
+		font-size: 1.2rem;
+		text-align: right;
+	}
+	.intro {
+		margin: auto 0;
+		padding: 2rem 0 3rem;
+	}
+	.example-text {
+		display: flex;
+		justify-content: space-between;
+		text-align: left;
+	}
+	.example-text .col {
+		flex: 0 0 48%;
+	}
+	.example-text .card {
+		float: right;
+		margin-left: 2rem;
+		margin-right: 1rem;
+	}
+	.fab-five-items svg {
+		height: 120px;
+		width: 120px;
+	}
+	.game-started .fab-five-items {
+		margin: 1rem 0 0;
+	}
+	.modal .content {
+		min-width: 500px;
+	}
+	.play-head .wins .num,
+	.play-head .time .num {
+		font-size: 2.25rem;
+		line-height: 1.4;
+	}
 }
 
 @media (max-width: 1023px) {
-    .intro p br {
-        display: none;
-    }
+	.intro p br {
+		display: none;
+	}
 }
 
 @media (min-width: 1024px) {
-    h1 {
-        font-size: 4rem;
-    }
+	h1 {
+		font-size: 4rem;
+	}
 }
 
 @media (min-width: 1200px) {
-    header .container {
-        justify-content: center;
-    }
-    nav {
-        position: absolute;
-        right: 2rem;
-    }
+	header .container {
+		justify-content: center;
+	}
+	nav {
+		position: absolute;
+		right: 2rem;
+	}
 }

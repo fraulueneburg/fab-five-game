@@ -8,9 +8,9 @@
 
 ## Introduction
 
-This is a project that I made at Ironhack as part of their 2023 Web Development Bootcamp. It is a logic game, based on a German card game. I’m especially proud that I built it entirely in Javascript, HTML and CSS – no canvas elements here.
+This is a project that I made at Ironhack as part of their 2023 Web Development Bootcamp. It is a logic game, based on a German card game. I’m especially proud of the fact that I built it entirely in Javascript, HTML and CSS – no canvas elements here.
 
-I used inline svgs, then cloned them via the `<use>` element. The colours are dynamically switched via CSS custom properties. The side comes with dark and light mode and scales to mobile.
+I used one inline svg for each shapes, then cloned them via the `<use>` element. This makes it easy to change the shapes, if needed. The colours are equally easy to adjust via CSS custom properties. The game comes with dark and light mode and scales to mobile, of course.
 
 ## Features
 
