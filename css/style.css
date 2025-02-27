@@ -243,6 +243,24 @@ footer {
 footer a {
 	border-bottom: 1px solid currentColor;
 }
+body > footer .container {
+	align-items: center;
+	display: flex;
+	gap: 1rem;
+	justify-content: flex-end;
+}
+
+body > footer a:has(svg) {
+	border-bottom: none;
+}
+
+body > footer svg {
+	fill: var(--color-text);
+}
+
+body > footer small {
+	margin-bottom: 0.25rem;
+}
 
 /*---------- CONTENT ----------*/
 
