@@ -385,7 +385,8 @@ body > footer small {
 .cards {
 	overflow: hidden;
 	position: relative;
-	margin: 0 calc(-50vw + 50%);
+	margin-block: 0;
+	margin-inline-start: calc(-50vw + 50%);
 	height: 310px;
 	width: 100vw;
 }
