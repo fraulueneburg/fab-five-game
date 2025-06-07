@@ -383,6 +383,7 @@ body > footer small {
 }
 
 .cards {
+	overflow: hidden;
 	position: relative;
 	margin: 0 calc(-100vw / 2 + 100% / 2);
 	max-width: 100vw;
