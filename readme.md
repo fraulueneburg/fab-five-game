@@ -43,6 +43,8 @@ If you’d like to view my game in your browser:
 - open `index.html`
 - or, you know, just visit [the game demo](https://fraulueneburg.github.io/fab-five-game/) and start the gaming fun right away 🚀
 
+For testing on your local network, you can also `npm install http-server` and then start it with `http-server -p 8000 -a 0.0.0.0`
+
 ## 2. Customization
 
 ### Item Colours
